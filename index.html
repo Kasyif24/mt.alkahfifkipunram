@@ -1,0 +1,2331 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Majelis Taklim Al-Kahfi FKIP Universitas Mataram - Membentuk Generasi Rabbani, Intelektual, dan Berakhlakul Karimah">
+<meta name="keywords" content="MT Al-Kahfi, FKIP, Universitas Mataram, dakwah kampus, organisasi islami">
+<title>MT. Al-Kahfi FKIP Universitas Mataram</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        navy: { 50:'#f0f4f8',100:'#d9e2ec',200:'#bcccdc',300:'#9fb3c8',400:'#829ab1',500:'#627d98',600:'#486581',700:'#334e68',800:'#1e3a5f',900:'#0f2744',950:'#0a1628' },
+        gold: { 50:'#fefce8',100:'#fef9c3',200:'#fef08a',300:'#fde047',400:'#f0c14b',500:'#d4a843',600:'#c9952a',700:'#a67c1e',800:'#856318',900:'#6b4f12' }
+      },
+      fontFamily: { display:['"Cormorant Garamond"','serif'], body:['"Plus Jakarta Sans"','sans-serif'] }
+    }
+  }
+}
+</script>
+<style>
+/* ========== CSS VARIABEL & BASE ========== */
+:root { --gold-glow: rgba(212,168,67,0.3); --emerald-glow: rgba(5,150,105,0.3); }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Plus Jakarta Sans',sans-serif; overflow-x:hidden; transition: background-color .4s, color .4s; }
+.dark body, html.dark body { background:#0a1628; color:#e2e8f0; }
+
+/* ========== LOADING SCREEN ========== */
+#loader { position:fixed; inset:0; z-index:9999; display:flex; align-items:center; justify-content:center; background:#0a1628; transition: opacity .6s, visibility .6s; }
+#loader.hidden { opacity:0; visibility:hidden; }
+.loader-star { width:60px; height:60px; animation: spinStar 2s linear infinite; }
+@keyframes spinStar { to { transform: rotate(360deg); } }
+.loader-text { animation: fadeUp .8s ease .3s both; }
+@keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+
+/* ========== ISLAMIC PATTERN ========== */
+.islamic-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cpath d='M40 5L47 28L70 35L47 42L40 65L33 42L10 35L33 28Z' fill='none' stroke='%23d4a843' stroke-width='.4' opacity='.08'/%3E%3Ccircle cx='40' cy='35' r='12' fill='none' stroke='%23d4a843' stroke-width='.3' opacity='.05'/%3E%3C/svg%3E");
+  background-size: 80px 80px;
+}
+.dark .islamic-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cpath d='M40 5L47 28L70 35L47 42L40 65L33 42L10 35L33 28Z' fill='none' stroke='%23d4a843' stroke-width='.4' opacity='.12'/%3E%3Ccircle cx='40' cy='35' r='12' fill='none' stroke='%23d4a843' stroke-width='.3' opacity='.08'/%3E%3C/svg%3E");
+}
+
+/* ========== GLASSMORPHISM ========== */
+.glass { background: rgba(255,255,255,0.75); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.3); }
+.dark .glass { background: rgba(15,39,68,0.65); border-color: rgba(212,168,67,0.15); }
+.glass-card { background: rgba(255,255,255,0.85); backdrop-filter: blur(12px); border: 1px solid rgba(5,150,105,0.1); border-radius: 1rem; transition: transform .3s, box-shadow .3s; }
+.dark .glass-card { background: rgba(15,39,68,0.6); border-color: rgba(212,168,67,0.12); }
+.glass-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(5,150,105,0.12); }
+.dark .glass-card:hover { box-shadow: 0 20px 40px rgba(212,168,67,0.1); }
+
+/* ========== NAVBAR ========== */
+#navbar { transition: background .3s, box-shadow .3s, padding .3s; }
+#navbar.scrolled { background: rgba(255,255,255,0.92) !important; backdrop-filter: blur(20px); box-shadow: 0 4px 30px rgba(0,0,0,0.08); padding-top:.5rem !important; padding-bottom:.5rem !important; }
+.dark #navbar.scrolled { background: rgba(10,22,40,0.92) !important; box-shadow: 0 4px 30px rgba(0,0,0,0.3); }
+.nav-link { position:relative; padding:.25rem 0; }
+.nav-link::after { content:''; position:absolute; bottom:0; left:0; width:0; height:2px; background: linear-gradient(90deg,#059669,#d4a843); transition: width .3s; }
+.nav-link:hover::after, .nav-link.active::after { width:100%; }
+
+/* ========== HERO ========== */
+.hero-bg { background: linear-gradient(135deg, rgba(15,39,68,0.92) 0%, rgba(5,150,105,0.85) 50%, rgba(15,39,68,0.9) 100%); }
+.hero-float { animation: heroFloat 6s ease-in-out infinite; }
+.hero-float-delay { animation: heroFloat 6s ease-in-out 2s infinite; }
+@keyframes heroFloat { 0%,100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-20px) rotate(5deg); } }
+
+/* ========== TIMELINE ========== */
+.timeline-line { position:absolute; left:50%; top:0; bottom:0; width:3px; background: linear-gradient(to bottom, #059669, #d4a843, #059669); transform: translateX(-50%); }
+@media(max-width:768px) { .timeline-line { left: 24px; } }
+.timeline-dot { width:18px; height:18px; background: linear-gradient(135deg,#059669,#d4a843); border-radius:50%; border:3px solid white; box-shadow: 0 0 0 4px rgba(5,150,105,0.2); z-index:2; position:relative; }
+.dark .timeline-dot { border-color:#0a1628; }
+
+/* ========== GALERI ========== */
+.gallery-item { overflow:hidden; border-radius:1rem; cursor:pointer; position:relative; }
+.gallery-item img { transition: transform .5s; width:100%; height:100%; object-fit:cover; }
+.gallery-item:hover img { transform: scale(1.1); }
+.gallery-overlay { position:absolute; inset:0; background: linear-gradient(to top, rgba(10,22,40,0.8) 0%, transparent 60%); opacity:0; transition: opacity .3s; display:flex; align-items:flex-end; padding:1.5rem; }
+.gallery-item:hover .gallery-overlay { opacity:1; }
+
+/* ========== FORM ========== */
+.form-input { background: rgba(255,255,255,0.8); border: 1.5px solid rgba(5,150,105,0.2); border-radius: .75rem; padding: .75rem 1rem; width:100%; transition: border-color .3s, box-shadow .3s; font-family:'Plus Jakarta Sans',sans-serif; }
+.dark .form-input { background: rgba(15,39,68,0.6); border-color: rgba(212,168,67,0.2); color:#e2e8f0; }
+.form-input:focus { outline:none; border-color:#059669; box-shadow: 0 0 0 3px rgba(5,150,105,0.15); }
+.dark .form-input:focus { border-color:#d4a843; box-shadow: 0 0 0 3px rgba(212,168,67,0.15); }
+.form-input.error { border-color:#ef4444; }
+
+/* ========== TOAST ========== */
+#toast { position:fixed; top:100px; right:20px; z-index:9000; transform:translateX(120%); transition: transform .4s cubic-bezier(.68,-.55,.27,1.55); }
+#toast.show { transform: translateX(0); }
+
+/* ========== LIGHTBOX ========== */
+#lightbox { position:fixed; inset:0; z-index:8000; background:rgba(0,0,0,0.92); display:none; align-items:center; justify-content:center; cursor:pointer; }
+#lightbox.active { display:flex; }
+
+/* ========== MODAL ========== */
+#articleModal { position:fixed; inset:0; z-index:7000; background:rgba(0,0,0,0.7); display:none; align-items:center; justify-content:center; padding:1rem; }
+#articleModal.active { display:flex; }
+
+/* ========== SCROLL TO TOP ========== */
+#scrollTop { position:fixed; bottom:30px; right:30px; z-index:6000; opacity:0; visibility:hidden; transition: opacity .3s, visibility .3s, transform .3s; transform:translateY(20px); }
+#scrollTop.visible { opacity:1; visibility:visible; transform:translateY(0); }
+
+/* ========== MISC ========== */
+.text-gradient { background: linear-gradient(135deg, #059669, #d4a843); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+.btn-primary { background: linear-gradient(135deg, #059669, #047857); color:white; padding:.75rem 2rem; border-radius:.75rem; font-weight:600; transition: transform .2s, box-shadow .2s; display:inline-flex; align-items:center; gap:.5rem; border:none; cursor:pointer; font-family:inherit; font-size:.95rem; }
+.btn-primary:hover { transform:translateY(-2px); box-shadow: 0 8px 25px rgba(5,150,105,0.35); }
+.btn-gold { background: linear-gradient(135deg, #d4a843, #c9952a); color:#1a1a2e; }
+.btn-gold:hover { box-shadow: 0 8px 25px rgba(212,168,67,0.35); }
+.btn-outline { background:transparent; border:2px solid rgba(255,255,255,0.5); color:white; padding:.75rem 2rem; border-radius:.75rem; font-weight:600; transition: all .2s; display:inline-flex; align-items:center; gap:.5rem; cursor:pointer; font-family:inherit; font-size:.95rem; }
+.btn-outline:hover { background:rgba(255,255,255,0.15); border-color:white; }
+.section-title { font-family:'Cormorant Garamond',serif; }
+.bismillah { font-family:'Cormorant Garamond',serif; font-size:1.5rem; color:#d4a843; font-style:italic; }
+.dark .bg-section-light { background:#0d1f38; }
+.dark .bg-section-alt { background:#0a1628; }
+.stat-card { position:relative; overflow:hidden; }
+.stat-card::before { content:''; position:absolute; top:-50%; right:-50%; width:100%; height:100%; background:radial-gradient(circle, rgba(212,168,67,0.08) 0%, transparent 70%); }
+.org-tree-line { border-left: 2px dashed rgba(5,150,105,0.3); }
+.dark .org-tree-line { border-left-color: rgba(212,168,67,0.3); }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+</style>
+</head>
+
+<body class="font-body bg-gray-50 text-gray-800 dark:bg-navy-950 dark:text-gray-100">
+
+<!-- ==================== LOADING SCREEN ==================== -->
+<div id="loader">
+  <div class="text-center">
+    <svg class="loader-star mx-auto mb-4" viewBox="0 0 80 80" fill="none">
+      <path d="M40 5L47 28L70 35L47 42L40 65L33 42L10 35L33 28Z" stroke="#d4a843" stroke-width="2" fill="rgba(212,168,67,0.1)"/>
+      <circle cx="40" cy="35" r="8" fill="none" stroke="#059669" stroke-width="1.5"/>
+    </svg>
+    <p class="loader-text text-gold-400 font-display text-2xl font-bold tracking-wider">Al-Kahfi</p>
+    <p class="loader-text text-gold-500/60 text-sm mt-1" style="animation-delay:.5s">MT. FKIP Universitas Mataram</p>
+  </div>
+</div>
+
+<!-- ==================== TOAST NOTIFICATION ==================== -->
+<div id="toast" class="glass-card px-6 py-4 flex items-center gap-3 max-w-sm">
+  <i id="toastIcon" class="fas fa-check-circle text-emerald-500 text-xl"></i>
+  <span id="toastMsg" class="text-sm font-medium"></span>
+</div>
+
+<!-- ==================== LIGHTBOX ==================== -->
+<div id="lightbox" onclick="closeLightbox()" role="dialog" aria-label="Tampilan gambar besar">
+  <button class="absolute top-6 right-6 text-white text-3xl hover:text-gold-400 transition" aria-label="Tutup"><i class="fas fa-times"></i></button>
+  <img id="lightboxImg" src="" alt="Galeri" class="max-w-[90vw] max-h-[85vh] rounded-xl shadow-2xl">
+</div>
+
+<!-- ==================== ARTICLE MODAL ==================== -->
+<div id="articleModal" onclick="if(event.target===this)closeArticleModal()" role="dialog" aria-label="Baca artikel">
+  <div class="glass-card max-w-2xl w-full max-h-[85vh] overflow-y-auto p-8 rounded-2xl">
+    <button class="float-right text-xl text-gray-400 hover:text-red-500 transition" onclick="closeArticleModal()" aria-label="Tutup"><i class="fas fa-times"></i></button>
+    <span id="modalCategory" class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400"></span>
+    <h2 id="modalTitle" class="font-display text-3xl font-bold mt-2 mb-4 text-navy-900 dark:text-white"></h2>
+    <div class="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400 mb-6">
+      <span><i class="far fa-calendar-alt mr-1"></i> <span id="modalDate"></span></span>
+      <span><i class="far fa-user mr-1"></i> <span id="modalAuthor"></span></span>
+    </div>
+    <div id="modalBody" class="text-gray-700 dark:text-gray-300 leading-relaxed space-y-4"></div>
+  </div>
+</div>
+
+<!-- ==================== NAVBAR ==================== -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 py-4 transition-all">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="#beranda" class="flex items-center gap-3 group">
+      <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-emerald-600 to-emerald-800 flex items-center justify-center shadow-lg group-hover:scale-105 transition">
+        <svg viewBox="0 0 40 40" class="w-7 h-7" fill="none"><path d="M20 3L24 16L37 20L24 24L20 37L16 24L3 20L16 16Z" fill="#d4a843"/><circle cx="20" cy="20" r="5" fill="white" opacity=".9"/></svg>
+      </div>
+      <div class="hidden sm:block">
+        <p class="font-display text-lg font-bold leading-tight text-white">Al-Kahfi</p>
+        <p class="text-[10px] text-white/60 tracking-widest uppercase">FKIP Unram</p>
+      </div>
+    </a>
+    <!-- Desktop Nav -->
+    <div class="hidden lg:flex items-center gap-1">
+      <a href="#beranda" class="nav-link text-white/90 hover:text-white text-sm font-medium px-3 py-1.5 transition">Beranda</a>
+      <a href="#tentang" class="nav-link text-white/90 hover:text-white text-sm font-medium px-3 py-1.5 transition">Tentang</a>
+      <a href="#divisi" class="nav-link text-white/90 hover:text-white text-sm font-medium px-3 py-1.5 transition">Divisi</a>
+      <a href="#program" class="nav-link text-white/90 hover:text-white text-sm font-medium px-3 py-1.5 transition">Program</a>
+      <a href="#galeri" class="nav-link text-white/90 hover:text-white text-sm font-medium px-3 py-1.5 transition">Galeri</a>
+      <a href="#artikel" class="nav-link text-white/90 hover:text-white text-sm font-medium px-3 py-1.5 transition">Artikel</a>
+      <a href="#kalender" class="nav-link text-white/90 hover:text-white text-sm font-medium px-3 py-1.5 transition">Kalender</a>
+      <a href="#kontak" class="nav-link text-white/90 hover:text-white text-sm font-medium px-3 py-1.5 transition">Kontak</a>
+    </div>
+    <!-- Right Actions -->
+    <div class="flex items-center gap-3">
+      <button id="darkToggle" class="w-10 h-10 rounded-xl bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition" aria-label="Ganti tema">
+        <i class="fas fa-moon text-sm" id="darkIcon"></i>
+      </button>
+      <a href="#pendaftaran" class="hidden sm:inline-flex btn-primary text-sm !py-2 !px-5"><i class="fas fa-user-plus"></i> Gabung</a>
+      <button id="mobileMenuBtn" class="lg:hidden w-10 h-10 rounded-xl bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition" aria-label="Menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </div>
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="lg:hidden hidden mt-2 mx-4 glass rounded-2xl p-4">
+    <div class="flex flex-col gap-1">
+      <a href="#beranda" class="mobile-link block px-4 py-2.5 rounded-xl text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-emerald-50 dark:hover:bg-navy-800 transition">Beranda</a>
+      <a href="#tentang" class="mobile-link block px-4 py-2.5 rounded-xl text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-emerald-50 dark:hover:bg-navy-800 transition">Tentang Kami</a>
+      <a href="#divisi" class="mobile-link block px-4 py-2.5 rounded-xl text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-emerald-50 dark:hover:bg-navy-800 transition">Divisi</a>
+      <a href="#program" class="mobile-link block px-4 py-2.5 rounded-xl text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-emerald-50 dark:hover:bg-navy-800 transition">Program Kerja</a>
+      <a href="#galeri" class="mobile-link block px-4 py-2.5 rounded-xl text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-emerald-50 dark:hover:bg-navy-800 transition">Galeri</a>
+      <a href="#artikel" class="mobile-link block px-4 py-2.5 rounded-xl text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-emerald-50 dark:hover:bg-navy-800 transition">Artikel</a>
+      <a href="#kalender" class="mobile-link block px-4 py-2.5 rounded-xl text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-emerald-50 dark:hover:bg-navy-800 transition">Kalender</a>
+      <a href="#kontak" class="mobile-link block px-4 py-2.5 rounded-xl text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-emerald-50 dark:hover:bg-navy-800 transition">Kontak</a>
+      <a href="#pendaftaran" class="btn-primary text-sm justify-center mt-2"><i class="fas fa-user-plus"></i> Gabung Sekarang</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ==================== HERO SECTION ==================== -->
+<section id="beranda" class="relative min-h-screen flex items-center overflow-hidden">
+  <!-- Background Image -->
+  <div class="absolute inset-0">
+    <img src="https://picsum.photos/seed/islamic-campus-study/1920/1080" alt="Mahasiswa muslim belajar" class="w-full h-full object-cover">
+    <div class="hero-bg absolute inset-0"></div>
+    <div class="islamic-pattern absolute inset-0 opacity-40"></div>
+  </div>
+  <!-- Decorative Elements -->
+  <div class="absolute top-32 right-10 w-20 h-20 text-gold-400/20 hero-float">
+    <svg viewBox="0 0 80 80" fill="currentColor"><path d="M40 5L47 28L70 35L47 42L40 65L33 42L10 35L33 28Z"/></svg>
+  </div>
+  <div class="absolute bottom-40 left-10 w-14 h-14 text-emerald-400/15 hero-float-delay">
+    <svg viewBox="0 0 80 80" fill="currentColor"><path d="M40 5L47 28L70 35L47 42L40 65L33 42L10 35L33 28Z"/></svg>
+  </div>
+  <!-- Content -->
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+    <div class="max-w-3xl" data-aos="fade-up">
+      <p class="bismillah mb-4">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</p>
+      <p class="text-emerald-300 font-semibold text-sm tracking-widest uppercase mb-4">Majelis Taklim FKIP Universitas Mataram</p>
+      <h1 class="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6">
+        MT. <span class="text-gold-400">Al-Kahfi</span>
+      </h1>
+      <p class="text-lg sm:text-xl text-white/80 leading-relaxed mb-10 max-w-2xl">
+        "Membentuk Generasi <span class="text-gold-300 font-semibold">Rabbani</span>, <span class="text-emerald-300 font-semibold">Intelektual</span>, dan <span class="text-gold-300 font-semibold">Berakhlakul Karimah</span>"
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a href="#pendaftaran" class="btn-primary"><i class="fas fa-user-plus"></i> Gabung Sekarang</a>
+        <a href="#program" class="btn-outline"><i class="fas fa-calendar-alt"></i> Lihat Kegiatan</a>
+        <a href="#kontak" class="btn-outline"><i class="fab fa-whatsapp"></i> Hubungi Kami</a>
+      </div>
+    </div>
+  </div>
+  <!-- Scroll Indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/50 animate-bounce">
+    <i class="fas fa-chevron-down text-xl"></i>
+  </div>
+</section>
+
+<!-- ==================== STATISTIK ==================== -->
+<section class="relative bg-navy-900 dark:bg-navy-950 py-10 overflow-hidden">
+  <div class="islamic-pattern absolute inset-0 opacity-20"></div>
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+      <div class="stat-card text-center p-4" data-aos="fade-up" data-aos-delay="0">
+        <div class="text-gold-400 text-3xl sm:text-4xl mb-1"><i class="fas fa-users"></i></div>
+        <p class="text-3xl sm:text-4xl font-bold text-white counter" data-target="150">0</p>
+        <p class="text-white/50 text-sm mt-1">Anggota Aktif</p>
+      </div>
+      <div class="stat-card text-center p-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="text-gold-400 text-3xl sm:text-4xl mb-1"><i class="fas fa-clipboard-list"></i></div>
+        <p class="text-3xl sm:text-4xl font-bold text-white counter" data-target="24">0</p>
+        <p class="text-white/50 text-sm mt-1">Program Kerja</p>
+      </div>
+      <div class="stat-card text-center p-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="text-gold-400 text-3xl sm:text-4xl mb-1"><i class="fas fa-book-quran"></i></div>
+        <p class="text-3xl sm:text-4xl font-bold text-white counter" data-target="52">0</p>
+        <p class="text-white/50 text-sm mt-1">Kajian Rutin/Tahun</p>
+      </div>
+      <div class="stat-card text-center p-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="text-gold-400 text-3xl sm:text-4xl mb-1"><i class="fas fa-graduation-cap"></i></div>
+        <p class="text-3xl sm:text-4xl font-bold text-white counter" data-target="500">0</p>
+        <p class="text-white/50 text-sm mt-1">Alumni</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== TENTANG KAMI ==================== -->
+<section id="tentang" class="bg-section-light py-20 sm:py-28 islamic-pattern">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header -->
+    <div class="text-center mb-16" data-aos="fade-up">
+      <p class="text-emerald-600 dark:text-emerald-400 font-semibold text-sm tracking-widest uppercase mb-3">Mengenal Kami</p>
+      <h2 class="section-title text-4xl sm:text-5xl font-bold text-navy-900 dark:text-white">Tentang <span class="text-gradient">Al-Kahfi</span></h2>
+      <div class="w-20 h-1 bg-gradient-to-r from-emerald-500 to-gold-500 mx-auto mt-4 rounded-full"></div>
+    </div>
+    <!-- Sejarah -->
+    <div class="grid lg:grid-cols-2 gap-12 items-center mb-20">
+      <div data-aos="fade-right">
+        <h3 class="section-title text-2xl font-bold text-navy-900 dark:text-white mb-4">Sejarah Berdiri</h3>
+        <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+          Majelis Taklim Al-Kahfi didirikan pada tahun 2015 oleh sekelompok mahasiswa FKIP Universitas Mataram yang memiliki visi besar untuk membangun ekosistem dakwah kampus yang berkualitas. Nama "Al-Kahfi" diambil dari Surah Al-Kahfi yang melambangkan perlindungan, keimanan, dan ilmu yang mendalam.
+        </p>
+        <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+          Berawal dari kajian rutin mingguan dengan tidak lebih dari 20 orang, Al-Kahfi terus berkembang hingga menjadi salah satu organisasi dakwah kampus paling aktif dan berpengaruh di lingkungan FKIP Universitas Mataram.
+        </p>
+        <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+          Hingga kini, Al-Kahfi telah melahirkan ratusan alumni yang tersebar di berbagai bidang — pendidik, da'i, pemimpin komunitas, dan profesional yang tetap menjaga nilai-nilai keislaman dalam kesehariannya.
+        </p>
+      </div>
+      <div data-aos="fade-left">
+        <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+          <img src="https://picsum.photos/seed/campus-mosque-study/800/600" alt="Kegiatan Al-Kahfi" class="w-full h-80 object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-navy-900/60 to-transparent"></div>
+          <div class="absolute bottom-6 left-6 text-white">
+            <p class="font-display text-3xl font-bold">Sejak 2015</p>
+            <p class="text-white/70 text-sm">Berkarya untuk Umat</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Visi Misi -->
+    <div class="grid md:grid-cols-2 gap-8 mb-20">
+      <div class="glass-card p-8" data-aos="fade-up" data-aos-delay="0">
+        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-500 to-emerald-700 flex items-center justify-center mb-5 shadow-lg">
+          <i class="fas fa-eye text-white text-xl"></i>
+        </div>
+        <h3 class="section-title text-2xl font-bold text-navy-900 dark:text-white mb-4">Visi</h3>
+        <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-lg">
+          Menjadi wadah dakwah kampus yang unggul dalam membentuk generasi muslim rabbani, intelektual, berakhlakul karimah, dan berkontribusi nyata bagi masyarakat dan peradaban Islam.
+        </p>
+      </div>
+      <div class="glass-card p-8" data-aos="fade-up" data-aos-delay="100">
+        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-gold-500 to-gold-700 flex items-center justify-center mb-5 shadow-lg">
+          <i class="fas fa-bullseye text-white text-xl"></i>
+        </div>
+        <h3 class="section-title text-2xl font-bold text-navy-900 dark:text-white mb-4">Misi</h3>
+        <ul class="text-gray-600 dark:text-gray-300 space-y-2.5">
+          <li class="flex items-start gap-2"><i class="fas fa-check-circle text-emerald-500 mt-1 text-sm flex-shrink-0"></i> Menyelenggarakan kajian keislaman yang berkualitas dan aplikatif</li>
+          <li class="flex items-start gap-2"><i class="fas fa-check-circle text-emerald-500 mt-1 text-sm flex-shrink-0"></i> Membangun ukhuwah islamiyah yang kuat di kalangan anggota</li>
+          <li class="flex items-start gap-2"><i class="fas fa-check-circle text-emerald-500 mt-1 text-sm flex-shrink-0"></i> Mengembangkan potensi kepemimpinan dan kaderisasi dakwah</li>
+          <li class="flex items-start gap-2"><i class="fas fa-check-circle text-emerald-500 mt-1 text-sm flex-shrink-0"></i> Melaksanakan program pengabdian masyarakat yang berkelanjutan</li>
+          <li class="flex items-start gap-2"><i class="fas fa-check-circle text-emerald-500 mt-1 text-sm flex-shrink-0"></i> Memanfaatkan media digital untuk dakwah yang luas dan kreatif</li>
+        </ul>
+      </div>
+    </div>
+    <!-- Nilai-Nilai -->
+    <div class="mb-20">
+      <h3 class="section-title text-3xl font-bold text-navy-900 dark:text-white text-center mb-10" data-aos="fade-up">Nilai-Nilai Organisasi</h3>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-5" data-aos="fade-up" data-aos-delay="100">
+        <div class="glass-card p-6 text-center group">
+          <div class="w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center mx-auto mb-3 group-hover:bg-emerald-500 transition">
+            <i class="fas fa-hand-holding-heart text-emerald-600 dark:text-emerald-400 group-hover:text-white transition"></i>
+          </div>
+          <h4 class="font-bold text-navy-900 dark:text-white text-sm">Ukhuwah Islamiyah</h4>
+        </div>
+        <div class="glass-card p-6 text-center group">
+          <div class="w-12 h-12 rounded-xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mx-auto mb-3 group-hover:bg-blue-500 transition">
+            <i class="fas fa-book-open text-blue-600 dark:text-blue-400 group-hover:text-white transition"></i>
+          </div>
+          <h4 class="font-bold text-navy-900 dark:text-white text-sm">Keilmuan</h4>
+        </div>
+        <div class="glass-card p-6 text-center group">
+          <div class="w-12 h-12 rounded-xl bg-gold-100 dark:bg-gold-900/30 flex items-center justify-center mx-auto mb-3 group-hover:bg-gold-500 transition">
+            <i class="fas fa-crown text-gold-600 dark:text-gold-400 group-hover:text-white transition"></i>
+          </div>
+          <h4 class="font-bold text-navy-900 dark:text-white text-sm">Kepemimpinan</h4>
+        </div>
+        <div class="glass-card p-6 text-center group">
+          <div class="w-12 h-12 rounded-xl bg-teal-100 dark:bg-teal-900/30 flex items-center justify-center mx-auto mb-3 group-hover:bg-teal-500 transition">
+            <i class="fas fa-mosque text-teal-600 dark:text-teal-400 group-hover:text-white transition"></i>
+          </div>
+          <h4 class="font-bold text-navy-900 dark:text-white text-sm">Dakwah</h4>
+        </div>
+        <div class="glass-card p-6 text-center group">
+          <div class="w-12 h-12 rounded-xl bg-rose-100 dark:bg-rose-900/30 flex items-center justify-center mx-auto mb-3 group-hover:bg-rose-500 transition">
+            <i class="fas fa-hands-helping text-rose-600 dark:text-rose-400 group-hover:text-white transition"></i>
+          </div>
+          <h4 class="font-bold text-navy-900 dark:text-white text-sm">Pengabdian</h4>
+        </div>
+      </div>
+    </div>
+    <!-- Struktur Organisasi -->
+    <div data-aos="fade-up">
+      <h3 class="section-title text-3xl font-bold text-navy-900 dark:text-white text-center mb-10">Struktur Kepengurusan 2024/2025</h3>
+      <div class="flex flex-col items-center">
+        <!-- Pembina -->
+        <div class="glass-card p-5 text-center mb-4 min-w-[200px]">
+          <img src="https://picsum.photos/seed/pembina-ustadz/80/80" alt="Pembina" class="w-16 h-16 rounded-full mx-auto mb-2 object-cover border-2 border-gold-400">
+          <p class="text-xs text-emerald-600 dark:text-emerald-400 font-semibold uppercase tracking-wider">Pembina</p>
+          <p class="font-bold text-navy-900 dark:text-white text-sm">Ust. Ahmad Fauzi, M.Pd</p>
+        </div>
+        <div class="w-px h-6 bg-emerald-300 dark:bg-emerald-700"></div>
+        <!-- Ketua & Wakil -->
+        <div class="flex flex-wrap justify-center gap-4 mb-4">
+          <div class="glass-card p-5 text-center min-w-[180px]">
+            <img src="https://picsum.photos/seed/ketua-mahasiswa/80/80" alt="Ketua" class="w-16 h-16 rounded-full mx-auto mb-2 object-cover border-2 border-emerald-500">
+            <p class="text-xs text-emerald-600 dark:text-emerald-400 font-semibold uppercase tracking-wider">Ketua Umum</p>
+            <p class="font-bold text-navy-900 dark:text-white text-sm">M. Ilham Ramadhan</p>
+          </div>
+          <div class="glass-card p-5 text-center min-w-[180px]">
+            <img src="https://picsum.photos/seed/wakil-ketua-f/80/80" alt="Wakil" class="w-16 h-16 rounded-full mx-auto mb-2 object-cover border-2 border-emerald-500">
+            <p class="text-xs text-emerald-600 dark:text-emerald-400 font-semibold uppercase tracking-wider">Wakil Ketua</p>
+            <p class="font-bold text-navy-900 dark:text-white text-sm">Siti Nurhaliza</p>
+          </div>
+        </div>
+        <div class="w-px h-6 bg-emerald-300 dark:bg-emerald-700"></div>
+        <!-- Sekben -->
+        <div class="flex flex-wrap justify-center gap-4 mb-4">
+          <div class="glass-card p-4 text-center min-w-[160px]">
+            <img src="https://picsum.photos/seed/sekretaris-org/80/80" alt="Sekretaris" class="w-14 h-14 rounded-full mx-auto mb-2 object-cover border-2 border-navy-400">
+            <p class="text-xs text-navy-600 dark:text-navy-300 font-semibold">Sekretaris</p>
+            <p class="font-bold text-navy-900 dark:text-white text-sm">Aisyah Rahmawati</p>
+          </div>
+          <div class="glass-card p-4 text-center min-w-[160px]">
+            <img src="https://picsum.photos/seed/bendahara-org/80/80" alt="Bendahara" class="w-14 h-14 rounded-full mx-auto mb-2 object-cover border-2 border-navy-400">
+            <p class="text-xs text-navy-600 dark:text-navy-300 font-semibold">Bendahara</p>
+            <p class="font-bold text-navy-900 dark:text-white text-sm">Rizki Amelia</p>
+          </div>
+        </div>
+        <div class="w-px h-6 bg-emerald-300 dark:bg-emerald-700"></div>
+        <!-- Divisi -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 mt-2" id="orgDivisi"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== DIVISI ORGANISASI ==================== -->
+<section id="divisi" class="bg-section-alt py-20 sm:py-28">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16" data-aos="fade-up">
+      <p class="text-emerald-600 dark:text-emerald-400 font-semibold text-sm tracking-widest uppercase mb-3">Struktur Kerja</p>
+      <h2 class="section-title text-4xl sm:text-5xl font-bold text-navy-900 dark:text-white">Divisi <span class="text-gradient">Organisasi</span></h2>
+      <div class="w-20 h-1 bg-gradient-to-r from-emerald-500 to-gold-500 mx-auto mt-4 rounded-full"></div>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8" id="divisiGrid"></div>
+  </div>
+</section>
+
+<!-- ==================== PROGRAM KERJA (TIMELINE) ==================== -->
+<section id="program" class="bg-section-light py-20 sm:py-28 islamic-pattern">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16" data-aos="fade-up">
+      <p class="text-emerald-600 dark:text-emerald-400 font-semibold text-sm tracking-widest uppercase mb-3">Agenda Tahunan</p>
+      <h2 class="section-title text-4xl sm:text-5xl font-bold text-navy-900 dark:text-white">Program <span class="text-gradient">Kerja</span></h2>
+      <div class="w-20 h-1 bg-gradient-to-r from-emerald-500 to-gold-500 mx-auto mt-4 rounded-full"></div>
+    </div>
+    <div class="relative" id="timeline"></div>
+  </div>
+</section>
+
+<!-- ==================== GALERI KEGIATAN ==================== -->
+<section id="galeri" class="bg-navy-900 py-20 sm:py-28">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12" data-aos="fade-up">
+      <p class="text-emerald-400 font-semibold text-sm tracking-widest uppercase mb-3">Dokumentasi</p>
+      <h2 class="section-title text-4xl sm:text-5xl font-bold text-white">Galeri <span class="text-gold-400">Kegiatan</span></h2>
+      <div class="w-20 h-1 bg-gradient-to-r from-emerald-500 to-gold-500 mx-auto mt-4 rounded-full"></div>
+    </div>
+    <!-- Filter -->
+    <div class="flex flex-wrap justify-center gap-3 mb-10" data-aos="fade-up" data-aos-delay="100" id="galleryFilters"></div>
+    <!-- Grid -->
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" id="galleryGrid"></div>
+  </div>
+</section>
+
+<!-- ==================== ARTIKEL & DAKWAH ==================== -->
+<section id="artikel" class="bg-section-light py-20 sm:py-28 islamic-pattern">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12" data-aos="fade-up">
+      <p class="text-emerald-600 dark:text-emerald-400 font-semibold text-sm tracking-widest uppercase mb-3">Literasi Islami</p>
+      <h2 class="section-title text-4xl sm:text-5xl font-bold text-navy-900 dark:text-white">Artikel & <span class="text-gradient">Dakwah</span></h2>
+      <div class="w-20 h-1 bg-gradient-to-r from-emerald-500 to-gold-500 mx-auto mt-4 rounded-full"></div>
+    </div>
+    <!-- Search -->
+    <div class="max-w-md mx-auto mb-10" data-aos="fade-up" data-aos-delay="100">
+      <div class="relative">
+        <i class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+        <input type="text" id="articleSearch" placeholder="Cari artikel..." class="form-input pl-11 pr-4" aria-label="Cari artikel">
+      </div>
+    </div>
+    <!-- Articles Grid -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8" id="articleGrid"></div>
+  </div>
+</section>
+
+<!-- ==================== KALENDER KEGIATAN ==================== -->
+<section id="kalender" class="bg-section-alt py-20 sm:py-28">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16" data-aos="fade-up">
+      <p class="text-emerald-600 dark:text-emerald-400 font-semibold text-sm tracking-widest uppercase mb-3">Agenda Mendatang</p>
+      <h2 class="section-title text-4xl sm:text-5xl font-bold text-navy-900 dark:text-white">Kalender <span class="text-gradient">Kegiatan</span></h2>
+      <div class="w-20 h-1 bg-gradient-to-r from-emerald-500 to-gold-500 mx-auto mt-4 rounded-full"></div>
+    </div>
+    <div class="space-y-5" id="calendarList"></div>
+  </div>
+</section>
+
+<!-- ==================== PENDAFTARAN ANGGOTA ==================== -->
+<section id="pendaftaran" class="relative py-20 sm:py-28 overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-br from-emerald-800 via-emerald-700 to-navy-900"></div>
+  <div class="islamic-pattern absolute inset-0 opacity-30"></div>
+  <div class="relative z-10 max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12" data-aos="fade-up">
+      <p class="text-emerald-300 font-semibold text-sm tracking-widest uppercase mb-3">Bergabunglah Bersama Kami</p>
+      <h2 class="section-title text-4xl sm:text-5xl font-bold text-white">Pendaftaran <span class="text-gold-400">Anggota Baru</span></h2>
+      <div class="w-20 h-1 bg-gradient-to-r from-gold-400 to-emerald-300 mx-auto mt-4 rounded-full"></div>
+    </div>
+    <form id="registrationForm" class="glass-card p-8 sm:p-10 space-y-5" data-aos="fade-up" data-aos-delay="100" novalidate>
+      <div>
+        <label class="block text-sm font-semibold text-navy-900 dark:text-white mb-1.5">Nama Lengkap <span class="text-red-500">*</span></label>
+        <input type="text" name="nama" class="form-input" placeholder="Masukkan nama lengkap" required>
+        <p class="text-red-500 text-xs mt-1 hidden err-msg">Nama lengkap wajib diisi</p>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-5">
+        <div>
+          <label class="block text-sm font-semibold text-navy-900 dark:text-white mb-1.5">NIM <span class="text-red-500">*</span></label>
+          <input type="text" name="nim" class="form-input" placeholder="Contoh: 2201010001" required>
+          <p class="text-red-500 text-xs mt-1 hidden err-msg">NIM wajib diisi</p>
+        </div>
+        <div>
+          <label class="block text-sm font-semibold text-navy-900 dark:text-white mb-1.5">Angkatan <span class="text-red-500">*</span></label>
+          <select name="angkatan" class="form-input" required>
+            <option value="">Pilih angkatan</option>
+            <option>2021</option><option>2022</option><option>2023</option><option>2024</option><option>2025</option>
+          </select>
+          <p class="text-red-500 text-xs mt-1 hidden err-msg">Pilih angkatan</p>
+        </div>
+      </div>
+      <div>
+        <label class="block text-sm font-semibold text-navy-900 dark:text-white mb-1.5">Program Studi <span class="text-red-500">*</span></label>
+        <select name="prodi" class="form-input" required>
+          <option value="">Pilih program studi</option>
+          <option>Pendidikan Bahasa Inggris</option>
+          <option>Pendidikan Bahasa Indonesia</option>
+          <option>Pendidikan Matematika</option>
+          <option>Pendidikan IPA</option>
+          <option>Pendidikan IPS</option>
+          <option>Pendidikan PKn</option>
+          <option>Pendidikan Sejarah</option>
+          <option>Pendidikan Ekonomi</option>
+          <option>Pendidikan Guru SD</option>
+          <option>PGPAUD</option>
+          <option>Pendidikan Olahraga</option>
+          <option>Bimbingan Konseling</option>
+          <option>Pendidikan Seni</option>
+          <option>Teknologi Pendidikan</option>
+        </select>
+        <p class="text-red-500 text-xs mt-1 hidden err-msg">Pilih program studi</p>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-5">
+        <div>
+          <label class="block text-sm font-semibold text-navy-900 dark:text-white mb-1.5">Nomor WhatsApp <span class="text-red-500">*</span></label>
+          <input type="tel" name="wa" class="form-input" placeholder="08xxxxxxxxxx" required>
+          <p class="text-red-500 text-xs mt-1 hidden err-msg">Nomor WA wajib diisi</p>
+        </div>
+        <div>
+          <label class="block text-sm font-semibold text-navy-900 dark:text-white mb-1.5">Email <span class="text-red-500">*</span></label>
+          <input type="email" name="email" class="form-input" placeholder="email@example.com" required>
+          <p class="text-red-500 text-xs mt-1 hidden err-msg">Email tidak valid</p>
+        </div>
+      </div>
+      <div>
+        <label class="block text-sm font-semibold text-navy-900 dark:text-white mb-1.5">Motivasi Bergabung <span class="text-red-500">*</span></label>
+        <textarea name="motivasi" class="form-input" rows="4" placeholder="Ceritakan motivasi Anda bergabung dengan MT. Al-Kahfi..." required></textarea>
+        <p class="text-red-500 text-xs mt-1 hidden err-msg">Motivasi wajib diisi (min. 20 karakter)</p>
+      </div>
+      <button type="submit" class="btn-primary w-full justify-center text-base !py-3.5 btn-gold">
+        <i class="fas fa-paper-plane"></i> Kirim Pendaftaran
+      </button>
+      <p class="text-center text-xs text-gray-500 dark:text-gray-400 mt-2">Data Anda akan tersimpan dan dihubungi oleh tim recruitment kami</p>
+    </form>
+  </div>
+</section>
+
+<!-- ==================== KONTAK ==================== -->
+<section id="kontak" class="bg-section-light py-20 sm:py-28 islamic-pattern">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16" data-aos="fade-up">
+      <p class="text-emerald-600 dark:text-emerald-400 font-semibold text-sm tracking-widest uppercase mb-3">Hubungi Kami</p>
+      <h2 class="section-title text-4xl sm:text-5xl font-bold text-navy-900 dark:text-white">Kontak & <span class="text-gradient">Lokasi</span></h2>
+      <div class="w-20 h-1 bg-gradient-to-r from-emerald-500 to-gold-500 mx-auto mt-4 rounded-full"></div>
+    </div>
+    <div class="grid lg:grid-cols-2 gap-12">
+      <!-- Info -->
+      <div data-aos="fade-right">
+        <div class="space-y-6 mb-8">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center flex-shrink-0">
+              <i class="fas fa-map-marker-alt text-emerald-600 dark:text-emerald-400"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-navy-900 dark:text-white mb-1">Sekretariat</h4>
+              <p class="text-gray-600 dark:text-gray-300 text-sm">Gedung FKIP Universitas Mataram, Lantai 2, Ruang Organisasi Mahasiswa. Jl. Majapahit No. 62, Mataram, NTB</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center flex-shrink-0">
+              <i class="fas fa-envelope text-emerald-600 dark:text-emerald-400"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-navy-900 dark:text-white mb-1">Email</h4>
+              <p class="text-gray-600 dark:text-gray-300 text-sm">alkahfi.fkip@unram.ac.id</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center flex-shrink-0">
+              <i class="fab fa-whatsapp text-emerald-600 dark:text-emerald-400 text-lg"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-navy-900 dark:text-white mb-1">WhatsApp Admin</h4>
+              <p class="text-gray-600 dark:text-gray-300 text-sm">+62 812-3456-7890 (Admin Recruitment)</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center flex-shrink-0">
+              <i class="fas fa-clock text-emerald-600 dark:text-emerald-400"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-navy-900 dark:text-white mb-1">Jam Operasional</h4>
+              <p class="text-gray-600 dark:text-gray-300 text-sm">Senin - Sabtu: 08.00 - 17.00 WITA</p>
+            </div>
+          </div>
+        </div>
+        <!-- Social Media -->
+        <div class="flex gap-3">
+          <a href="#" class="w-11 h-11 rounded-xl bg-gradient-to-br from-pink-500 to-purple-600 flex items-center justify-center text-white hover:scale-110 transition shadow-lg" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="w-11 h-11 rounded-xl bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center text-white hover:scale-110 transition shadow-lg" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="w-11 h-11 rounded-xl bg-gradient-to-br from-gray-800 to-black flex items-center justify-center text-white hover:scale-110 transition shadow-lg" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          <a href="#" class="w-11 h-11 rounded-xl bg-gradient-to-br from-red-600 to-red-800 flex items-center justify-center text-white hover:scale-110 transition shadow-lg" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <!-- Contact Form -->
+      <div data-aos="fade-left">
+        <form id="contactForm" class="glass-card p-8 space-y-5" novalidate>
+          <div class="grid sm:grid-cols-2 gap-5">
+            <div>
+              <label class="block text-sm font-semibold text-navy-900 dark:text-white mb-1.5">Nama</label>
+              <input type="text" name="cNama" class="form-input" placeholder="Nama Anda" required>
+              <p class="text-red-500 text-xs mt-1 hidden err-msg">Wajib diisi</p>
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-navy-900 dark:text-white mb-1.5">Email</label>
+              <input type="email" name="cEmail" class="form-input" placeholder="email@anda.com" required>
+              <p class="text-red-500 text-xs mt-1 hidden err-msg">Email tidak valid</p>
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-navy-900 dark:text-white mb-1.5">Subjek</label>
+            <input type="text" name="cSubjek" class="form-input" placeholder="Subjek pesan" required>
+            <p class="text-red-500 text-xs mt-1 hidden err-msg">Wajib diisi</p>
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-navy-900 dark:text-white mb-1.5">Pesan</label>
+            <textarea name="cPesan" class="form-input" rows="5" placeholder="Tulis pesan Anda..." required></textarea>
+            <p class="text-red-500 text-xs mt-1 hidden err-msg">Wajib diisi</p>
+          </div>
+          <button type="submit" class="btn-primary w-full justify-center"><i class="fas fa-paper-plane"></i> Kirim Pesan</button>
+        </form>
+      </div>
+    </div>
+    <!-- Map Placeholder -->
+    <div class="mt-12 rounded-2xl overflow-hidden shadow-xl h-72" data-aos="fade-up">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3968.2!2d116.1167!3d-8.5833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOMKwMzQnNTkuOSJTIDExNsKwMDcnMDAuMCJF!5e0!3m2!1sid!2sid!4v1" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Lokasi FKIP Universitas Mataram"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="bg-navy-950 text-white pt-16 pb-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+      <!-- Logo & Deskripsi -->
+      <div class="lg:col-span-1">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-emerald-600 to-emerald-800 flex items-center justify-center">
+            <svg viewBox="0 0 40 40" class="w-7 h-7" fill="none"><path d="M20 3L24 16L37 20L24 24L20 37L16 24L3 20L16 16Z" fill="#d4a843"/><circle cx="20" cy="20" r="5" fill="white" opacity=".9"/></svg>
+          </div>
+          <div>
+            <p class="font-display text-lg font-bold leading-tight">Al-Kahfi</p>
+            <p class="text-[10px] text-white/50 tracking-widest uppercase">FKIP Unram</p>
+          </div>
+        </div>
+        <p class="text-white/50 text-sm leading-relaxed">Membentuk Generasi Rabbani, Intelektual, dan Berakhlakul Karimah di lingkungan FKIP Universitas Mataram.</p>
+      </div>
+      <!-- Quick Links -->
+      <div>
+        <h4 class="font-bold text-gold-400 mb-4 text-sm uppercase tracking-wider">Tautan Cepat</h4>
+        <ul class="space-y-2.5">
+          <li><a href="#beranda" class="text-white/50 hover:text-emerald-400 text-sm transition">Beranda</a></li>
+          <li><a href="#tentang" class="text-white/50 hover:text-emerald-400 text-sm transition">Tentang Kami</a></li>
+          <li><a href="#divisi" class="text-white/50 hover:text-emerald-400 text-sm transition">Divisi</a></li>
+          <li><a href="#program" class="text-white/50 hover:text-emerald-400 text-sm transition">Program Kerja</a></li>
+          <li><a href="#galeri" class="text-white/50 hover:text-emerald-400 text-sm transition">Galeri</a></li>
+          <li><a href="#artikel" class="text-white/50 hover:text-emerald-400 text-sm transition">Artikel</a></li>
+          <li><a href="#pendaftaran" class="text-white/50 hover:text-emerald-400 text-sm transition">Pendaftaran</a></li>
+        </ul>
+      </div>
+      <!-- Kegiatan -->
+      <div>
+        <h4 class="font-bold text-gold-400 mb-4 text-sm uppercase tracking-wider">Kegiatan</h4>
+        <ul class="space-y-2.5">
+          <li><a href="#program" class="text-white/50 hover:text-emerald-400 text-sm transition">Kajian Pekanan</a></li>
+          <li><a href="#program" class="text-white/50 hover:text-emerald-400 text-sm transition">Tahsin & Tahfidz</a></li>
+          <li><a href="#program" class="text-white/50 hover:text-emerald-400 text-sm transition">Tabligh Akbar</a></li>
+          <li><a href="#program" class="text-white/50 hover:text-emerald-400 text-sm transition">Bakti Sosial</a></li>
+          <li><a href="#program" class="text-white/50 hover:text-emerald-400 text-sm transition">Pelatihan Kepemimpinan</a></li>
+        </ul>
+      </div>
+      <!-- Media Sosial -->
+      <div>
+        <h4 class="font-bold text-gold-400 mb-4 text-sm uppercase tracking-wider">Media Sosial</h4>
+        <div class="flex gap-3 mb-5">
+          <a href="#" class="w-10 h-10 rounded-lg bg-white/5 hover:bg-gradient-to-br hover:from-pink-500 hover:to-purple-600 flex items-center justify-center text-white/60 hover:text-white transition" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="w-10 h-10 rounded-lg bg-white/5 hover:bg-gradient-to-br hover:from-blue-600 hover:to-blue-800 flex items-center justify-center text-white/60 hover:text-white transition" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="w-10 h-10 rounded-lg bg-white/5 hover:bg-gradient-to-br hover:from-gray-700 hover:to-black flex items-center justify-center text-white/60 hover:text-white transition" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          <a href="#" class="w-10 h-10 rounded-lg bg-white/5 hover:bg-gradient-to-br hover:from-red-600 hover:to-red-800 flex items-center justify-center text-white/60 hover:text-white transition" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p class="text-white/40 text-xs">Ikuti media sosial kami untuk informasi terbaru mengenai kegiatan dan kajian.</p>
+      </div>
+    </div>
+    <!-- Bottom -->
+    <div class="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-white/40 text-sm text-center sm:text-left">&copy; 2025 MT. Al-Kahfi FKIP Universitas Mataram. Seluruh hak cipta dilindungi.</p>
+      <p class="text-white/30 text-xs">Dibuat dengan <i class="fas fa-heart text-emerald-500"></i> untuk umat</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ==================== SCROLL TO TOP ==================== -->
+<button id="scrollTop" class="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-600 to-emerald-800 text-white shadow-xl flex items-center justify-center hover:scale-110 transition" aria-label="Kembali ke atas">
+  <i class="fas fa-chevron-up"></i>
+</button>
+
+<!-- ==================== AOS & SCRIPTS ==================== -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+// ========== DATA ==========
+const divisiData = [
+  { icon:'fa-user-graduate', color:'emerald', nama:'Divisi Kaderisasi', desc:'Membentuk kader-kader dakwah yang tangguh, militan, dan berkualitas melalui serangkaian pelatihan intensif.', program:['Basic Training Dakwah','Advanced Leadership Camp','Mentoring Berjenjang','Evaluasi Kader Triwulan'], ketua:'Fajar Nugroho' },
+  { icon:'fa-mosque', color:'teal', nama:'Divisi Syiar dan Dakwah', desc:'Menyelenggarakan kegiatan dakwah yang kreatif, efektif, dan menyentuh seluruh lapisan mahasiswa FKIP.', program:['Tabligh Akbar','Dakwah Kampus','Jumat Berkah','Kajian Spesial'], ketua:'Hikmah Wulandari' },
+  { icon:'fa-laptop-code', color:'blue', nama:'Divisi Media dan Informasi', desc:'Mengelola branding digital, konten kreatif, dan publikasi organisasi melalui berbagai platform media.', program:['Pengelolaan Sosmed','Desain Grafis','Videografi','Newsletter Bulanan'], ketua:'Dimas Pratama' },
+  { icon:'fa-handshake', color:'amber', nama:'Divisi Humas', desc:'Membangun relasi dan kerjasama strategis dengan internal dan eksternal organisasi.', program:['Silaturahmi Organisasi','Kerjasama Lembaga','Fundraising','Public Relations'], ketua:'Nadia Safitri' },
+  { icon:'fa-book-quran', color:'indigo', nama:'Divisi Kajian Keislaman', desc:'Merancang dan mengelola program kajian rutin maupun khusus yang berkualitas dan aplikatif.', program:['Kajian Pekanan','Tahsin & Tahfidz','Kajian Kitab','Study Club Islami'], ketua:'Ahmad Rizki' },
+  { icon:'fa-hands-helping', color:'rose', nama:'Divisi Sosial dan Pengabdian', desc:'Melaksanakan program pengabdian masyarakat yang berdampak nyata bagi masyarakat sekitar kampus.', program:['Bakti Sosial','Santunan Anak Yatim','Peduli Lingkungan','Klinik Gratis'], ketua:'Laila Fitria' }
+];
+
+const timelineData = [
+  { bulan:'Januari', judul:'Open Recruitment Anggota Baru', desc:'Pendaftaran dan seleksi anggota baru MT. Al-Kahfi periode berjalan.', icon:'fa-door-open' },
+  { bulan:'Februari', judul:'Pelatihan Kepemimpinan Dasar', desc:'Basic Training untuk membentuk karakter kepemimpinan kader baru.', icon:'fa-chess-king' },
+  { bulan:'Maret', judul:'Kajian Pekanan Dimulai', desc:'Rangkaian kajian rutin mingguan dengan berbagai tema keislaman.', icon:'fa-book-quran' },
+  { bulan:'April', judul:'Tahsin dan Tahfidz Al-Quran', desc:'Program pembinaan membaca dan menghafal Al-Quran secara berkala.', icon:'fa-feather' },
+  { bulan:'Mei', judul:'Tabligh Akbar', desc:'Kegiatan dakwah besar bersama pemateri nasional terkemuka.', icon:'fa-microphone-alt' },
+  { bulan:'Juni', judul:'Mentoring Mahasiswa', desc:'Program pendampingan akademik dan spiritual bagi anggota.', icon:'fa-users' },
+  { bulan:'Juli', judul:'Ramadhan Berkah', desc:'Serangkaian kegiatan Ramadhan: buka bersama, tadarus, pesantren kilat.', icon:'fa-moon' },
+  { bulan:'Agustus', judul:'Bakti Sosial', desc:'Kegiatan sosial berupa santunan dan bantuan kepada masyarakat kurang mampu.', icon:'fa-hand-holding-heart' }
+];
+
+const galleryData = [
+  { src:'https://picsum.photos/seed/kajian-rutin-1/600/400', title:'Kajian Rutin Mingguan', cat:'Kajian' },
+  { src:'https://picsum.photos/seed/tabligh-akbar-2/600/400', title:'Tabligh Akbar 2024', cat:'Tabligh Akbar' },
+  { src:'https://picsum.photos/seed/pelatihan-dakwah/600/400', title:'Pelatihan Kepemimpinan', cat:'Pelatihan' },
+  { src:'https://picsum.photos/seed/baksos-alkahfi/600/400', title:'Bakti Sosial di Desa', cat:'Sosial' },
+  { src:'https://picsum.photos/seed/kajian-kitab-3/600/400', title:'Kajian Kitab Kuning', cat:'Kajian' },
+  { src:'https://picsum.photos/seed/rapat-pengurus/600/400', title:'Rapat Pengurus Harian', cat:'Dokumentasi' },
+  { src:'https://picsum.photos/seed/tahfidz-session/600/400', title:'Sesi Tahfidz Al-Quran', cat:'Kajian' },
+  { src:'https://picsum.photos/seed/tablig-besar-2/600/400', title:'Tabligh Akbar Bersama Ust. Adi', cat:'Tabligh Akbar' },
+  { src:'https://picsum.photos/seed/training-camp/600/400', title:'Leadership Camp', cat:'Pelatihan' },
+  { src:'https://picsum.photos/seed/santunan-yatim/600/400', title:'Santunan Anak Yatim', cat:'Sosial' },
+  { src:'https://picsum.photos/seed/photo-pengurus/600/400', title:'Foto Bersama Pengurus', cat:'Dokumentasi' },
+  { src:'https://picsum.photos/seed/study-club-islamic/600/400', title:'Study Club Islami', cat:'Kajian' }
+];
+
+const artikelData = [
+  { title:'Menjadi Mahasiswa Rabbani di Era Digital', excerpt:'Bagaimana seorang mahasiswa bisa menjaga keseimbangan antara keilmuan dunia dan keimanan di tengah arus digital yang deras...', cat:'Opini', date:'15 Jan 2025', author:'M. Ilham Ramadhan', img:'https://picsum.photos/seed/rabbani-digital/800/500', body:'<p>Di era digital yang penuh dengan distraksi dan informasi yang tak terbatas, menjadi mahasiswa rabbani bukan berarti memutus diri dari perkembangan zaman. Justru, seorang rabbani adalah mereka yang mampu memanfaatkan teknologi sebagai sarana untuk meningkatkan keimanan dan keilmuan.</p><p>Al-Quran mengajarkan kita untuk selalu berfikir dan merenungkan ciptaan Allah. Mahasiswa rabbani menggunakan internet bukan hanya untuk hiburan, tetapi juga untuk menuntut ilmu, berdakwah, dan membangun jaringan ukhuwah.</p><p>Berikut beberapa langkah praktis menjadi mahasiswa rabbani di era digital: pertama, tentukan prioritas waktu ibadah yang tidak bisa diganggu gugat; kedua, kurangi konsumsi konten yang tidak bermanfaat; ketiga, aktif dalam komunitas dakwah kampus seperti MT. Al-Kahfi.</p>' },
+  { title:'Pentingnya Mentoring dalam Membangun Ukhuwah', excerpt:'Mentoring bukan sekadar transfer ilmu, tapi membangun ikatan batin yang kuat antara sesama muslim di kampus...', cat:'Dakwah', date:'22 Jan 2025', author:'Siti Nurhaliza', img:'https://picsum.photos/seed/mentoring-ukhuwah/800/500', body:'<p>Mentoring adalah salah satu program unggulan MT. Al-Kahfi yang memiliki dampak mendalam bagi pembentukan karakter anggota. Berbeda dengan kajian yang bersifat massal, mentoring memberikan ruang personal untuk berdiskusi, berbagi, dan saling menguatkan.</p><p>Dalam mentoring, seorang mentor tidak hanya menyampaikan materi, tetapi juga menjadi teman curhat, motivator, dan teladan. Hubungan yang terbangun melalui mentoring seringkali bertahan lama bahkan setelah masa kuliah berakhir.</p><p>Ukhuwah yang dibangun di atas dasar iman akan menghasilkan sinergi yang luar biasa. Rasulullah SAW bersabda bahwa kaum mukmin dalam saling mencintai dan saling merahmati bagaikan satu tubuh.</p>' },
+  { title:'Tahfidz Al-Quran: Investasi Akhirat yang Tak Pernah Rugi', excerpt:'Menghafal Al-Quran di tengah kesibukan kuliah memang menantang, namun pahala yang didapat tak ternilai harganya...', cat:'Motivasi', date:'5 Feb 2025', author:'Ahmad Rizki', img:'https://picsum.photos/seed/tahfidz-investasi/800/500', body:'<p>Di antara amalan yang paling mulia adalah menghafal Al-Quran. Rasulullah SAW bersabda: "Dibacakan kepada pemilik Al-Quran, maka bacalah dan naiklah, dan bacalah dengan tartil sebagaimana engkau membacanya di dunia." (HR. Tirmidzi)</p><p>Bagi mahasiswa, waktu yang paling tepat untuk tahfidz adalah di pagi hari setelah Subuh atau di antara jadwal kuliah. Konsistensi 30 menit per hari lebih baik daripada 3 jam sekali seminggu.</p><p>MT. Al-Kahfi menyediakan program tahfidz dengan pendampingan khusus agar setiap anggota yang memiliki niat menghafal Al-Quran bisa mendapatkan bimbingan yang terstruktur.</p>' },
+  { title:'Dakwah Kampus: Antara Idealisme dan Realitas', excerpt:'Dakwah di kampus memiliki tantangan tersendiri. Bagaimana menyiasati antara idealisme dakwah dan realitas mahasiswa...', cat:'Opini', date:'12 Feb 2025', author:'Fajar Nugroho', img:'https://picsum.photos/seed/dakwah-kampus-reality/800/500', body:'<p>Dakwah kampus seringkali dihadapkan pada dilema: antara mempertahankan idealisme dakwah yang tinggi atau menyesuaikan dengan realitas mahasiswa yang sibuk dengan tugas dan kegiatan akademik.</p><p>Kunci dari dakwah kampus yang efektif adalah fleksibilitas tanpa mengorbankan prinsip. Kita bisa menyampaikan dakwah melalui berbagai cara: melalui kajian yang ringan dan aplikatif, melalui media sosial dengan konten yang menarik, atau melalui keteladanan dalam keseharian.</p><p>MT. Al-Kahfi berusaha menjembatani gap ini dengan menyediakan berbagai format dakwah yang bisa diakses oleh seluruh mahasiswa FKIP, tanpa membebani mereka.</p>' },
+  { title:'Membangun Kepemimpinan Islami di Lingkungan Akademik', excerpt:'Kepemimpinan dalam Islam bukan soal kekuasaan, tapi soal pengabdian. Bagaimana menerapkannya di organisasi kampus...', cat:'Keilmuan', date:'20 Feb 2025', author:'Dimas Pratama', img:'https://picsum.photos/seed/leadership-islamic/800/500', body:'<p>Rasulullah SAW adalah teladan utama kepemimpinan Islami. Beliau memimpin dengan kasih sayang, keadilan, dan penuh kepedulian terhadap yang dipimpinnya.</p><p>Di lingkungan akademik, kepemimpinan Islami bisa diterapkan melalui: pertama, amanah dalam menjalankan setiap tanggung jawab; kedua, syura (musyawarah) dalam pengambilan keputusan; ketiga, adil dalam memperlakukan setiap anggota; dan keempat, ikhlas tanpa mengharapkan pamrih.</p><p>Program pelatihan kepemimpinan di MT. Al-Kahfi dirancang untuk membentuk pemimpin-pemimpin muda yang memiliki visi dakwah dan kapasitas manajerial yang mumpuni.</p>' },
+  { title:'Dakwah Digital: Peluang dan Tantangan Generasi Milenial', excerpt:'Media sosial menjadi medan dakwah baru. Namun, ada aturan dan etika yang perlu dipahami dalam berdakwah digital...', cat:'Dakwah Digital', date:'1 Mar 2025', author:'Hikmah Wulandari', img:'https://picsum.photos/seed/dakwah-digital-era/800/500', body:'<p>Dakwah digital adalah penggunaan platform digital untuk menyebarkan nilai-nilai keislaman. Di era media sosial, dakwah tidak lagi terbatas pada mimbar masjid, tetapi bisa menjangkau jutaan orang melalui satu konten yang viral.</p><p>Namun, dakwah digital juga memiliki tantangan: hoaks, ujaran kebencian, dan polarisasi yang marak di media sosial. Seorang da\'i digital harus memastikan keakuratan informasi, menggunakan bahasa yang menyejukkan, dan menghindari sensasionalisme.</p><p>Divisi Media dan Informasi MT. Al-Kahfi secara konsisten mengedukasi anggotanya tentang etika dakwah digital sekaligus memproduksi konten-konten berkualitas yang menginspirasi.</p>' }
+];
+
+const calendarData = [
+  { tanggal:'25 Jul 2025', waktu:'08.00 - 12.00 WITA', judul:'Kajian Akbar: "Pemuda dan Al-Quran"', lokasi:'Aula FKIP Unram', jenis:'Kajian', warna:'emerald' },
+  { tanggal:'2 Aug 2025', waktu:'07.00 - selesai WITA', judul:'Bakti Sosial di Desa Bentek', lokasi:'Desa Bentek, Lombok Utara', jenis:'Sosial', warna:'rose' },
+  { tanggal:'10 Aug 2025', waktu:'09.00 - 15.00 WITA', judul:'Workshop Desain Grafis untuk Dakwah', lokasi:'Lab Komputer FKIP', jenis:'Pelatihan', warna:'blue' },
+  { tanggal:'17 Aug 2025', waktu:'08.00 - 11.00 WITA', judul:'Kajian Pekanan: Akhlak Terpuji', lokasi:'Mushola FKIP Unram', jenis:'Kajian', warna:'emerald' },
+  { tanggal:'24 Aug 2025', waktu:'13.00 - 16.00 WITA', judul:'Rapat Koordinasi Semester Ganjil', lokasi:'Ruang Organisasi FKIP', jenis:'Internal', warna:'amber' },
+  { tanggal:'5 Sep 2025', waktu:'08.00 - 17.00 WITA', judul:'Leadership Camp 2025', lokasi:'Wisata Alam Senggigi', jenis:'Pelatihan', warna:'blue' }
+];
+
+// ========== INISIALISASI ==========
+document.addEventListener('DOMContentLoaded', function() {
+  // Loading screen
+  setTimeout(() => { document.getElementById('loader').classList.add('hidden'); }, 1800);
+
+  // AOS
+  AOS.init({ duration: 800, once: true, offset: 80 });
+
+  // Render komponen
+  renderDivisi();
+  renderTimeline();
+  renderGallery();
+  renderArticles();
+  renderCalendar();
+  renderOrgDivisi();
+
+  // Event listeners
+  setupNavbar();
+  setupDarkMode();
+  setupMobileMenu();
+  setupCounters();
+  setupForms();
+  setupScrollTop();
+  setupArticleSearch();
+});
+
+// ========== NAVBAR ==========
+function setupNavbar() {
+  const nav = document.getElementById('navbar');
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  window.addEventListener('scroll', () => {
+    // Background
+    if (window.scrollY > 80) { nav.classList.add('scrolled'); }
+    else { nav.classList.remove('scrolled'); }
+
+    // Scroll spy
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 200) current = s.getAttribute('id');
+    });
+    navLinks.forEach(l => {
+      l.classList.remove('active');
+      if (l.getAttribute('href') === '#' + current) l.classList.add('active');
+    });
+  });
+}
+
+// ========== DARK MODE ==========
+function setupDarkMode() {
+  const btn = document.getElementById('darkToggle');
+  const icon = document.getElementById('darkIcon');
+  const saved = localStorage.getItem('darkMode');
+  if (saved === 'true' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.documentElement.classList.add('dark');
+    icon.className = 'fas fa-sun text-sm';
+  }
+  btn.addEventListener('click', () => {
+    document.documentElement.classList.toggle('dark');
+    const isDark = document.documentElement.classList.contains('dark');
+    localStorage.setItem('darkMode', isDark);
+    icon.className = isDark ? 'fas fa-sun text-sm' : 'fas fa-moon text-sm';
+  });
+}
+
+// ========== MOBILE MENU ==========
+function setupMobileMenu() {
+  const btn = document.getElementById('mobileMenuBtn');
+  const menu = document.getElementById('mobileMenu');
+  btn.addEventListener('click', () => { menu.classList.toggle('hidden'); });
+  document.querySelectorAll('.mobile-link').forEach(l => {
+    l.addEventListener('click', () => { menu.classList.add('hidden'); });
+  });
+}
+
+// ========== COUNTER ANIMATION ==========
+function setupCounters() {
+  const counters = document.querySelectorAll('.counter');
+  let counted = false;
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !counted) {
+        counted = true;
+        counters.forEach(c => {
+          const target = +c.dataset.target;
+          const duration = 2000;
+          const step = target / (duration / 16);
+          let val = 0;
+          const timer = setInterval(() => {
+            val += step;
+            if (val >= target) { val = target; clearInterval(timer); }
+            c.textContent = Math.floor(val) + '+';
+          }, 16);
+        });
+      }
+    });
+  }, { threshold: 0.5 });
+  counters.forEach(c => observer.observe(c));
+}
+
+// ========== RENDER DIVISI ==========
+function renderDivisi() {
+  const grid = document.getElementById('divisiGrid');
+  const colorMap = { emerald:'emerald', teal:'teal', blue:'blue', amber:'amber', indigo:'indigo', rose:'rose' };
+  grid.innerHTML = divisiData.map((d, i) => `
+    <div class="glass-card p-7" data-aos="fade-up" data-aos-delay="${i * 80}">
+      <div class="w-14 h-14 rounded-2xl bg-${d.color}-100 dark:bg-${d.color}-900/30 flex items-center justify-center mb-5">
+        <i class="fas ${d.icon} text-${d.color}-600 dark:text-${d.color}-400 text-xl"></i>
+      </div>
+      <h3 class="font-bold text-navy-900 dark:text-white text-lg mb-2">${d.nama}</h3>
+      <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">${d.desc}</p>
+      <div class="mb-4">
+        <p class="text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">Program Kerja</p>
+        <ul class="space-y-1.5">
+          ${d.program.map(p => `<li class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300"><i class="fas fa-check text-${d.color}-500 text-xs"></i>${p}</li>`).join('')}
+        </ul>
+      </div>
+      <div class="pt-3 border-t border-gray-100 dark:border-navy-700">
+        <p class="text-xs text-gray-500 dark:text-gray-400">Ketua Divisi</p>
+        <p class="font-semibold text-navy-900 dark:text-white text-sm">${d.ketua}</p>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ========== RENDER ORG DIVISI ==========
+function renderOrgDivisi() {
+  const el = document.getElementById('orgDivisi');
+  el.innerHTML = divisiData.map(d => `
+    <div class="glass-card p-3 text-center">
+      <div class="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-500 to-navy-700 flex items-center justify-center mx-auto mb-1.5">
+        <i class="fas ${d.icon} text-white text-xs"></i>
+      </div>
+      <p class="text-[10px] text-gray-500 dark:text-gray-400 font-semibold uppercase">${d.nama.replace('Divisi ','')}</p>
+      <p class="font-bold text-navy-900 dark:text-white text-xs mt-0.5">${d.ketua.split(' ')[0]}</p>
+    </div>
+  `).join('');
+}
+
+// ========== RENDER TIMELINE ==========
+function renderTimeline() {
+  const el = document.getElementById('timeline');
+  el.innerHTML = '<div class="timeline-line hidden md:block"></div>' +
+    timelineData.map((t, i) => {
+      const isLeft = i % 2 === 0;
+      return `
+      <div class="relative flex flex-col md:flex-row items-center mb-12 ${isLeft ? 'md:flex-row' : 'md:flex-row-reverse'}" data-aos="fade-up" data-aos-delay="${i * 80}">
+        <div class="hidden md:block w-1/2 ${isLeft ? 'pr-12 text-right' : 'pl-12 text-left'}">
+          <div class="glass-card p-6 inline-block">
+            <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">${t.bulan}</span>
+            <h4 class="font-bold text-navy-900 dark:text-white mt-1 mb-2">${t.judul}</h4>
+            <p class="text-gray-600 dark:text-gray-300 text-sm">${t.desc}</p>
+          </div>
+        </div>
+        <div class="timeline-dot flex-shrink-0 my-4 md:my-0"></div>
+        <div class="md:w-1/2 ${isLeft ? 'pl-12' : 'pr-12'} hidden md:block"></div>
+        <!-- Mobile -->
+        <div class="md:hidden glass-card p-5 w-full max-w-sm">
+          <div class="flex items-center gap-3 mb-2">
+            <div class="w-10 h-10 rounded-xl bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center flex-shrink-0">
+              <i class="fas ${t.icon} text-emerald-600 dark:text-emerald-400"></i>
+            </div>
+            <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">${t.bulan}</span>
+          </div>
+          <h4 class="font-bold text-navy-900 dark:text-white mb-1">${t.judul}</h4>
+          <p class="text-gray-600 dark:text-gray-300 text-sm">${t.desc}</p>
+        </div>
+      </div>`;
+    }).join('');
+}
+
+// ========== RENDER GALERI ==========
+let activeFilter = 'Semua';
+function renderGallery(filter) {
+  filter = filter || activeFilter;
+  activeFilter = filter;
+  const grid = document.getElementById('galleryGrid');
+  const items = filter === 'Semua' ? galleryData : galleryData.filter(g => g.cat === filter);
+  grid.innerHTML = items.map((g, i) => `
+    <div class="gallery-item aspect-[4/3]" data-aos="zoom-in" data-aos-delay="${i * 50}" onclick="openLightbox('${g.src}')">
+      <img src="${g.src}" alt="${g.title}" loading="lazy">
+      <div class="gallery-overlay">
+        <div>
+          <p class="text-white font-bold text-sm">${g.title}</p>
+          <p class="text-gold-400 text-xs">${g.cat}</p>
+        </div>
+      </div>
+    </div>
+  `).join('');
+  // Filter buttons
+  const cats = ['Semua', ...new Set(galleryData.map(g => g.cat))];
+  document.getElementById('galleryFilters').innerHTML = cats.map(c =>
+    `<button class="px-4 py-2 rounded-full text-sm font-medium transition ${c === filter ? 'bg-gold-500 text-navy-900' : 'bg-white/10 text-white/70 hover:bg-white/20'}" onclick="renderGallery('${c}')">${c}</button>`
+  ).join('');
+}
+
+// ========== LIGHTBOX ==========
+function openLightbox(src) {
+  document.getElementById('lightboxImg').src = src;
+  document.getElementById('lightbox').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+// ========== RENDER ARTIKEL ==========
+let articleFilterText = '';
+function renderArticles(search) {
+  search = search || articleFilterText;
+  articleFilterText = search;
+  const grid = document.getElementById('articleGrid');
+  const items = search
+    ? artikelData.filter(a => a.title.toLowerCase().includes(search.toLowerCase()) || a.excerpt.toLowerCase().includes(search.toLowerCase()) || a.cat.toLowerCase().includes(search.toLowerCase()))
+    : artikelData;
+  if (items.length === 0) {
+    grid.innerHTML = '<div class="col-span-full text-center py-12"><i class="fas fa-search text-4xl text-gray-300 dark:text-gray-600 mb-4"></i><p class="text-gray-400">Tidak ada artikel yang ditemukan</p></div>';
+    return;
+  }
+  grid.innerHTML = items.map((a, i) => `
+    <article class="glass-card overflow-hidden group" data-aos="fade-up" data-aos-delay="${i * 80}">
+      <div class="overflow-hidden h-48">
+        <img src="${a.img}" alt="${a.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+      </div>
+      <div class="p-6">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-900/20 px-2.5 py-1 rounded-full">${a.cat}</span>
+          <span class="text-xs text-gray-400">${a.date}</span>
+        </div>
+        <h3 class="font-bold text-navy-900 dark:text-white text-lg mb-2 leading-snug group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition">${a.title}</h3>
+        <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4 line-clamp-3">${a.excerpt}</p>
+        <button onclick="openArticleModal(${artikelData.indexOf(a)})" class="text-emerald-600 dark:text-emerald-400 text-sm font-semibold hover:underline inline-flex items-center gap-1">
+          Baca Selengkapnya <i class="fas fa-arrow-right text-xs"></i>
+        </button>
+      </div>
+    </article>
+  `).join('');
+}
+
+function setupArticleSearch() {
+  const input = document.getElementById('articleSearch');
+  let timeout;
+  input.addEventListener('input', () => {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => renderArticles(input.value), 300);
+  });
+}
+
+// ========== ARTICLE MODAL ==========
+function openArticleModal(idx) {
+  const a = artikelData[idx];
+  document.getElementById('modalCategory').textContent = a.cat;
+  document.getElementById('modalTitle').textContent = a.title;
+  document.getElementById('modalDate').textContent = a.date;
+  document.getElementById('modalAuthor').textContent = a.author;
+  document.getElementById('modalBody').innerHTML = a.body;
+  document.getElementById('articleModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeArticleModal() {
+  document.getElementById('articleModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+// ========== RENDER CALENDAR ==========
+function renderCalendar() {
+  const el = document.getElementById('calendarList');
+  const colorMap = { emerald:'emerald', rose:'rose', blue:'blue', amber:'amber' };
+  el.innerHTML = calendarData.map((c, i) => `
+    <div class="glass-card p-5 sm:p-6 flex flex-col sm:flex-row gap-4 sm:gap-6 items-start" data-aos="fade-up" data-aos-delay="${i * 60}">
+      <div class="flex-shrink-0 w-16 h-16 rounded-2xl bg-${c.warna}-100 dark:bg-${c.warna}-900/30 flex flex-col items-center justify-center">
+        <span class="text-${c.warna}-600 dark:text-${c.warna}-400 text-xs font-bold uppercase">${c.tanggal.split(' ')[0]}</span>
+        <span class="text-${c.warna}-700 dark:text-${c.warna}-300 text-xl font-bold leading-none">${c.tanggal.split(' ')[1].replace(',','')}</span>
+        <span class="text-${c.warna}-500 dark:text-${c.warna}-400 text-[10px]">${c.tanggal.split(' ')[2]}</span>
+      </div>
+      <div class="flex-1 min-w-0">
+        <div class="flex items-center gap-2 mb-1 flex-wrap">
+          <span class="text-xs font-bold uppercase tracking-wider text-${c.warna}-600 dark:text-${c.warna}-400 bg-${c.warna}-50 dark:bg-${c.warna}-900/20 px-2.5 py-0.5 rounded-full">${c.jenis}</span>
+          <span class="text-xs text-gray-400"><i class="far fa-clock mr-1"></i>${c.waktu}</span>
+        </div>
+        <h4 class="font-bold text-navy-900 dark:text-white text-lg mb-1">${c.judul}</h4>
+        <p class="text-gray-500 dark:text-gray-400 text-sm"><i class="fas fa-map-marker-alt mr-1"></i>${c.lokasi}</p>
+      </div>
+      <a href="#pendaftaran" class="btn-primary text-xs !py-2 !px-4 flex-shrink-0 self-center"><i class="fas fa-sign-up-alt"></i> Daftar</a>
+    </div>
+  `).join('');
+}
+
+// ========== FORM VALIDATION ==========
+function setupForms() {
+  // Pendaftaran
+  document.getElementById('registrationForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    if (validateForm(this)) {
+      const data = {};
+      new FormData(this).forEach((v, k) => data[k] = v);
+      // Simpan ke localStorage (simulasi database)
+      const stored = JSON.parse(localStorage.getItem('alkahfi_pendaftar') || '[]');
+      stored.push({ ...data, timestamp: new Date().toISOString() });
+      localStorage.setItem('alkahfi_pendaftar', JSON.stringify(stored));
+      this.reset();
+      showToast('Pendaftaran berhasil dikirim! Tim kami akan menghubungi Anda.', 'success');
+    }
+  });
+
+  // Kontak
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    if (validateForm(this)) {
+      this.reset();
+      showToast('Pesan Anda berhasil dikirim! Jazakallahu khairan.', 'success');
+    }
+  });
+}
+
+function validateForm(form) {
+  let valid = true;
+  form.querySelectorAll('.err-msg').forEach(m => m.classList.add('hidden'));
+  form.querySelectorAll('.form-input').forEach(i => i.classList.remove('error'));
+
+  const fields = form.querySelectorAll('[required]');
+  fields.forEach(f => {
+    const errMsg = f.parentElement.querySelector('.err-msg');
+    if (!f.value.trim()) {
+      valid = false;
+      f.classList.add('error');
+      if (errMsg) errMsg.classList.remove('hidden');
+    } else if (f.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.value)) {
+      valid = false;
+      f.classList.add('error');
+      if (errMsg) { errMsg.textContent = 'Format email tidak valid'; errMsg.classList.remove('hidden'); }
+    } else if (f.name === 'motivasi' && f.value.trim().length < 20) {
+      valid = false;
+      f.classList.add('error');
+      if (errMsg) { errMsg.textContent = 'Motivasi minimal 20 karakter'; errMsg.classList.remove('hidden'); }
+    }
+  });
+  if (!valid) showToast('Mohon lengkapi form dengan benar', 'error');
+  return valid;
+}
+
+// ========== TOAST ==========
+function showToast(msg, type) {
+  const toast = document.getElementById('toast');
+  const icon = document.getElementById('toastIcon');
+  const msgEl = document.getElementById('toastMsg');
+  msgEl.textContent = msg;
+  icon.className = type === 'success' ? 'fas fa-check-circle text-emerald-500 text-xl' : 'fas fa-exclamation-circle text-red-500 text-xl';
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 3500);
+}
+
+// ========== SCROLL TO TOP ==========
+function setupScrollTop() {
+  const btn = document.getElementById('scrollTop');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 600) btn.classList.add('visible');
+    else btn.classList.remove('visible');
+  });
+  btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+}
+
+// Keyboard: ESC menutup lightbox/modal
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') { closeLightbox(); closeArticleModal(); }
+});
+</script>
+</body>
+</html><!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Majelis Taklim Al-Kahfi FKIP Universitas Mataram - Membentuk Generasi Rabbani, Intelektual, dan Berakhlakul Karimah">
+<meta name="keywords" content="MT Al-Kahfi, FKIP, Universitas Mataram, dakwah kampus, organisasi islami">
+<title>MT. Al-Kahfi FKIP Universitas Mataram</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        navy: { 50:'#f0f4f8',100:'#d9e2ec',200:'#bcccdc',300:'#9fb3c8',400:'#829ab1',500:'#627d98',600:'#486581',700:'#334e68',800:'#1e3a5f',900:'#0f2744',950:'#0a1628' },
+        gold: { 50:'#fefce8',100:'#fef9c3',200:'#fef08a',300:'#fde047',400:'#f0c14b',500:'#d4a843',600:'#c9952a',700:'#a67c1e',800:'#856318',900:'#6b4f12' }
+      },
+      fontFamily: { display:['"Cormorant Garamond"','serif'], body:['"Plus Jakarta Sans"','sans-serif'] }
+    }
+  }
+}
+</script>
+<style>
+/* ========== CSS VARIABEL & BASE ========== */
+:root { --gold-glow: rgba(212,168,67,0.3); --emerald-glow: rgba(5,150,105,0.3); }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Plus Jakarta Sans',sans-serif; overflow-x:hidden; transition: background-color .4s, color .4s; }
+.dark body, html.dark body { background:#0a1628; color:#e2e8f0; }
+
+/* ========== LOADING SCREEN ========== */
+#loader { position:fixed; inset:0; z-index:9999; display:flex; align-items:center; justify-content:center; background:#0a1628; transition: opacity .6s, visibility .6s; }
+#loader.hidden { opacity:0; visibility:hidden; }
+.loader-star { width:60px; height:60px; animation: spinStar 2s linear infinite; }
+@keyframes spinStar { to { transform: rotate(360deg); } }
+.loader-text { animation: fadeUp .8s ease .3s both; }
+@keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+
+/* ========== ISLAMIC PATTERN ========== */
+.islamic-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cpath d='M40 5L47 28L70 35L47 42L40 65L33 42L10 35L33 28Z' fill='none' stroke='%23d4a843' stroke-width='.4' opacity='.08'/%3E%3Ccircle cx='40' cy='35' r='12' fill='none' stroke='%23d4a843' stroke-width='.3' opacity='.05'/%3E%3C/svg%3E");
+  background-size: 80px 80px;
+}
+.dark .islamic-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cpath d='M40 5L47 28L70 35L47 42L40 65L33 42L10 35L33 28Z' fill='none' stroke='%23d4a843' stroke-width='.4' opacity='.12'/%3E%3Ccircle cx='40' cy='35' r='12' fill='none' stroke='%23d4a843' stroke-width='.3' opacity='.08'/%3E%3C/svg%3E");
+}
+
+/* ========== GLASSMORPHISM ========== */
+.glass { background: rgba(255,255,255,0.75); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.3); }
+.dark .glass { background: rgba(15,39,68,0.65); border-color: rgba(212,168,67,0.15); }
+.glass-card { background: rgba(255,255,255,0.85); backdrop-filter: blur(12px); border: 1px solid rgba(5,150,105,0.1); border-radius: 1rem; transition: transform .3s, box-shadow .3s; }
+.dark .glass-card { background: rgba(15,39,68,0.6); border-color: rgba(212,168,67,0.12); }
+.glass-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(5,150,105,0.12); }
+.dark .glass-card:hover { box-shadow: 0 20px 40px rgba(212,168,67,0.1); }
+
+/* ========== NAVBAR ========== */
+#navbar { transition: background .3s, box-shadow .3s, padding .3s; }
+#navbar.scrolled { background: rgba(255,255,255,0.92) !important; backdrop-filter: blur(20px); box-shadow: 0 4px 30px rgba(0,0,0,0.08); padding-top:.5rem !important; padding-bottom:.5rem !important; }
+.dark #navbar.scrolled { background: rgba(10,22,40,0.92) !important; box-shadow: 0 4px 30px rgba(0,0,0,0.3); }
+.nav-link { position:relative; padding:.25rem 0; }
+.nav-link::after { content:''; position:absolute; bottom:0; left:0; width:0; height:2px; background: linear-gradient(90deg,#059669,#d4a843); transition: width .3s; }
+.nav-link:hover::after, .nav-link.active::after { width:100%; }
+
+/* ========== HERO ========== */
+.hero-bg { background: linear-gradient(135deg, rgba(15,39,68,0.92) 0%, rgba(5,150,105,0.85) 50%, rgba(15,39,68,0.9) 100%); }
+.hero-float { animation: heroFloat 6s ease-in-out infinite; }
+.hero-float-delay { animation: heroFloat 6s ease-in-out 2s infinite; }
+@keyframes heroFloat { 0%,100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-20px) rotate(5deg); } }
+
+/* ========== TIMELINE ========== */
+.timeline-line { position:absolute; left:50%; top:0; bottom:0; width:3px; background: linear-gradient(to bottom, #059669, #d4a843, #059669); transform: translateX(-50%); }
+@media(max-width:768px) { .timeline-line { left: 24px; } }
+.timeline-dot { width:18px; height:18px; background: linear-gradient(135deg,#059669,#d4a843); border-radius:50%; border:3px solid white; box-shadow: 0 0 0 4px rgba(5,150,105,0.2); z-index:2; position:relative; }
+.dark .timeline-dot { border-color:#0a1628; }
+
+/* ========== GALERI ========== */
+.gallery-item { overflow:hidden; border-radius:1rem; cursor:pointer; position:relative; }
+.gallery-item img { transition: transform .5s; width:100%; height:100%; object-fit:cover; }
+.gallery-item:hover img { transform: scale(1.1); }
+.gallery-overlay { position:absolute; inset:0; background: linear-gradient(to top, rgba(10,22,40,0.8) 0%, transparent 60%); opacity:0; transition: opacity .3s; display:flex; align-items:flex-end; padding:1.5rem; }
+.gallery-item:hover .gallery-overlay { opacity:1; }
+
+/* ========== FORM ========== */
+.form-input { background: rgba(255,255,255,0.8); border: 1.5px solid rgba(5,150,105,0.2); border-radius: .75rem; padding: .75rem 1rem; width:100%; transition: border-color .3s, box-shadow .3s; font-family:'Plus Jakarta Sans',sans-serif; }
+.dark .form-input { background: rgba(15,39,68,0.6); border-color: rgba(212,168,67,0.2); color:#e2e8f0; }
+.form-input:focus { outline:none; border-color:#059669; box-shadow: 0 0 0 3px rgba(5,150,105,0.15); }
+.dark .form-input:focus { border-color:#d4a843; box-shadow: 0 0 0 3px rgba(212,168,67,0.15); }
+.form-input.error { border-color:#ef4444; }
+
+/* ========== TOAST ========== */
+#toast { position:fixed; top:100px; right:20px; z-index:9000; transform:translateX(120%); transition: transform .4s cubic-bezier(.68,-.55,.27,1.55); }
+#toast.show { transform: translateX(0); }
+
+/* ========== LIGHTBOX ========== */
+#lightbox { position:fixed; inset:0; z-index:8000; background:rgba(0,0,0,0.92); display:none; align-items:center; justify-content:center; cursor:pointer; }
+#lightbox.active { display:flex; }
+
+/* ========== MODAL ========== */
+#articleModal { position:fixed; inset:0; z-index:7000; background:rgba(0,0,0,0.7); display:none; align-items:center; justify-content:center; padding:1rem; }
+#articleModal.active { display:flex; }
+
+/* ========== SCROLL TO TOP ========== */
+#scrollTop { position:fixed; bottom:30px; right:30px; z-index:6000; opacity:0; visibility:hidden; transition: opacity .3s, visibility .3s, transform .3s; transform:translateY(20px); }
+#scrollTop.visible { opacity:1; visibility:visible; transform:translateY(0); }
+
+/* ========== MISC ========== */
+.text-gradient { background: linear-gradient(135deg, #059669, #d4a843); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+.btn-primary { background: linear-gradient(135deg, #059669, #047857); color:white; padding:.75rem 2rem; border-radius:.75rem; font-weight:600; transition: transform .2s, box-shadow .2s; display:inline-flex; align-items:center; gap:.5rem; border:none; cursor:pointer; font-family:inherit; font-size:.95rem; }
+.btn-primary:hover { transform:translateY(-2px); box-shadow: 0 8px 25px rgba(5,150,105,0.35); }
+.btn-gold { background: linear-gradient(135deg, #d4a843, #c9952a); color:#1a1a2e; }
+.btn-gold:hover { box-shadow: 0 8px 25px rgba(212,168,67,0.35); }
+.btn-outline { background:transparent; border:2px solid rgba(255,255,255,0.5); color:white; padding:.75rem 2rem; border-radius:.75rem; font-weight:600; transition: all .2s; display:inline-flex; align-items:center; gap:.5rem; cursor:pointer; font-family:inherit; font-size:.95rem; }
+.btn-outline:hover { background:rgba(255,255,255,0.15); border-color:white; }
+.section-title { font-family:'Cormorant Garamond',serif; }
+.bismillah { font-family:'Cormorant Garamond',serif; font-size:1.5rem; color:#d4a843; font-style:italic; }
+.dark .bg-section-light { background:#0d1f38; }
+.dark .bg-section-alt { background:#0a1628; }
+.stat-card { position:relative; overflow:hidden; }
+.stat-card::before { content:''; position:absolute; top:-50%; right:-50%; width:100%; height:100%; background:radial-gradient(circle, rgba(212,168,67,0.08) 0%, transparent 70%); }
+.org-tree-line { border-left: 2px dashed rgba(5,150,105,0.3); }
+.dark .org-tree-line { border-left-color: rgba(212,168,67,0.3); }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+</style>
+</head>
+
+<body class="font-body bg-gray-50 text-gray-800 dark:bg-navy-950 dark:text-gray-100">
+
+<!-- ==================== LOADING SCREEN ==================== -->
+<div id="loader">
+  <div class="text-center">
+    <svg class="loader-star mx-auto mb-4" viewBox="0 0 80 80" fill="none">
+      <path d="M40 5L47 28L70 35L47 42L40 65L33 42L10 35L33 28Z" stroke="#d4a843" stroke-width="2" fill="rgba(212,168,67,0.1)"/>
+      <circle cx="40" cy="35" r="8" fill="none" stroke="#059669" stroke-width="1.5"/>
+    </svg>
+    <p class="loader-text text-gold-400 font-display text-2xl font-bold tracking-wider">Al-Kahfi</p>
+    <p class="loader-text text-gold-500/60 text-sm mt-1" style="animation-delay:.5s">MT. FKIP Universitas Mataram</p>
+  </div>
+</div>
+
+<!-- ==================== TOAST NOTIFICATION ==================== -->
+<div id="toast" class="glass-card px-6 py-4 flex items-center gap-3 max-w-sm">
+  <i id="toastIcon" class="fas fa-check-circle text-emerald-500 text-xl"></i>
+  <span id="toastMsg" class="text-sm font-medium"></span>
+</div>
+
+<!-- ==================== LIGHTBOX ==================== -->
+<div id="lightbox" onclick="closeLightbox()" role="dialog" aria-label="Tampilan gambar besar">
+  <button class="absolute top-6 right-6 text-white text-3xl hover:text-gold-400 transition" aria-label="Tutup"><i class="fas fa-times"></i></button>
+  <img id="lightboxImg" src="" alt="Galeri" class="max-w-[90vw] max-h-[85vh] rounded-xl shadow-2xl">
+</div>
+
+<!-- ==================== ARTICLE MODAL ==================== -->
+<div id="articleModal" onclick="if(event.target===this)closeArticleModal()" role="dialog" aria-label="Baca artikel">
+  <div class="glass-card max-w-2xl w-full max-h-[85vh] overflow-y-auto p-8 rounded-2xl">
+    <button class="float-right text-xl text-gray-400 hover:text-red-500 transition" onclick="closeArticleModal()" aria-label="Tutup"><i class="fas fa-times"></i></button>
+    <span id="modalCategory" class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400"></span>
+    <h2 id="modalTitle" class="font-display text-3xl font-bold mt-2 mb-4 text-navy-900 dark:text-white"></h2>
+    <div class="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400 mb-6">
+      <span><i class="far fa-calendar-alt mr-1"></i> <span id="modalDate"></span></span>
+      <span><i class="far fa-user mr-1"></i> <span id="modalAuthor"></span></span>
+    </div>
+    <div id="modalBody" class="text-gray-700 dark:text-gray-300 leading-relaxed space-y-4"></div>
+  </div>
+</div>
+
+<!-- ==================== NAVBAR ==================== -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 py-4 transition-all">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="#beranda" class="flex items-center gap-3 group">
+      <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-emerald-600 to-emerald-800 flex items-center justify-center shadow-lg group-hover:scale-105 transition">
+        <svg viewBox="0 0 40 40" class="w-7 h-7" fill="none"><path d="M20 3L24 16L37 20L24 24L20 37L16 24L3 20L16 16Z" fill="#d4a843"/><circle cx="20" cy="20" r="5" fill="white" opacity=".9"/></svg>
+      </div>
+      <div class="hidden sm:block">
+        <p class="font-display text-lg font-bold leading-tight text-white">Al-Kahfi</p>
+        <p class="text-[10px] text-white/60 tracking-widest uppercase">FKIP Unram</p>
+      </div>
+    </a>
+    <!-- Desktop Nav -->
+    <div class="hidden lg:flex items-center gap-1">
+      <a href="#beranda" class="nav-link text-white/90 hover:text-white text-sm font-medium px-3 py-1.5 transition">Beranda</a>
+      <a href="#tentang" class="nav-link text-white/90 hover:text-white text-sm font-medium px-3 py-1.5 transition">Tentang</a>
+      <a href="#divisi" class="nav-link text-white/90 hover:text-white text-sm font-medium px-3 py-1.5 transition">Divisi</a>
+      <a href="#program" class="nav-link text-white/90 hover:text-white text-sm font-medium px-3 py-1.5 transition">Program</a>
+      <a href="#galeri" class="nav-link text-white/90 hover:text-white text-sm font-medium px-3 py-1.5 transition">Galeri</a>
+      <a href="#artikel" class="nav-link text-white/90 hover:text-white text-sm font-medium px-3 py-1.5 transition">Artikel</a>
+      <a href="#kalender" class="nav-link text-white/90 hover:text-white text-sm font-medium px-3 py-1.5 transition">Kalender</a>
+      <a href="#kontak" class="nav-link text-white/90 hover:text-white text-sm font-medium px-3 py-1.5 transition">Kontak</a>
+    </div>
+    <!-- Right Actions -->
+    <div class="flex items-center gap-3">
+      <button id="darkToggle" class="w-10 h-10 rounded-xl bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition" aria-label="Ganti tema">
+        <i class="fas fa-moon text-sm" id="darkIcon"></i>
+      </button>
+      <a href="#pendaftaran" class="hidden sm:inline-flex btn-primary text-sm !py-2 !px-5"><i class="fas fa-user-plus"></i> Gabung</a>
+      <button id="mobileMenuBtn" class="lg:hidden w-10 h-10 rounded-xl bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition" aria-label="Menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </div>
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="lg:hidden hidden mt-2 mx-4 glass rounded-2xl p-4">
+    <div class="flex flex-col gap-1">
+      <a href="#beranda" class="mobile-link block px-4 py-2.5 rounded-xl text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-emerald-50 dark:hover:bg-navy-800 transition">Beranda</a>
+      <a href="#tentang" class="mobile-link block px-4 py-2.5 rounded-xl text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-emerald-50 dark:hover:bg-navy-800 transition">Tentang Kami</a>
+      <a href="#divisi" class="mobile-link block px-4 py-2.5 rounded-xl text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-emerald-50 dark:hover:bg-navy-800 transition">Divisi</a>
+      <a href="#program" class="mobile-link block px-4 py-2.5 rounded-xl text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-emerald-50 dark:hover:bg-navy-800 transition">Program Kerja</a>
+      <a href="#galeri" class="mobile-link block px-4 py-2.5 rounded-xl text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-emerald-50 dark:hover:bg-navy-800 transition">Galeri</a>
+      <a href="#artikel" class="mobile-link block px-4 py-2.5 rounded-xl text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-emerald-50 dark:hover:bg-navy-800 transition">Artikel</a>
+      <a href="#kalender" class="mobile-link block px-4 py-2.5 rounded-xl text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-emerald-50 dark:hover:bg-navy-800 transition">Kalender</a>
+      <a href="#kontak" class="mobile-link block px-4 py-2.5 rounded-xl text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-emerald-50 dark:hover:bg-navy-800 transition">Kontak</a>
+      <a href="#pendaftaran" class="btn-primary text-sm justify-center mt-2"><i class="fas fa-user-plus"></i> Gabung Sekarang</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ==================== HERO SECTION ==================== -->
+<section id="beranda" class="relative min-h-screen flex items-center overflow-hidden">
+  <!-- Background Image -->
+  <div class="absolute inset-0">
+    <img src="https://picsum.photos/seed/islamic-campus-study/1920/1080" alt="Mahasiswa muslim belajar" class="w-full h-full object-cover">
+    <div class="hero-bg absolute inset-0"></div>
+    <div class="islamic-pattern absolute inset-0 opacity-40"></div>
+  </div>
+  <!-- Decorative Elements -->
+  <div class="absolute top-32 right-10 w-20 h-20 text-gold-400/20 hero-float">
+    <svg viewBox="0 0 80 80" fill="currentColor"><path d="M40 5L47 28L70 35L47 42L40 65L33 42L10 35L33 28Z"/></svg>
+  </div>
+  <div class="absolute bottom-40 left-10 w-14 h-14 text-emerald-400/15 hero-float-delay">
+    <svg viewBox="0 0 80 80" fill="currentColor"><path d="M40 5L47 28L70 35L47 42L40 65L33 42L10 35L33 28Z"/></svg>
+  </div>
+  <!-- Content -->
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+    <div class="max-w-3xl" data-aos="fade-up">
+      <p class="bismillah mb-4">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</p>
+      <p class="text-emerald-300 font-semibold text-sm tracking-widest uppercase mb-4">Majelis Taklim FKIP Universitas Mataram</p>
+      <h1 class="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6">
+        MT. <span class="text-gold-400">Al-Kahfi</span>
+      </h1>
+      <p class="text-lg sm:text-xl text-white/80 leading-relaxed mb-10 max-w-2xl">
+        "Membentuk Generasi <span class="text-gold-300 font-semibold">Rabbani</span>, <span class="text-emerald-300 font-semibold">Intelektual</span>, dan <span class="text-gold-300 font-semibold">Berakhlakul Karimah</span>"
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a href="#pendaftaran" class="btn-primary"><i class="fas fa-user-plus"></i> Gabung Sekarang</a>
+        <a href="#program" class="btn-outline"><i class="fas fa-calendar-alt"></i> Lihat Kegiatan</a>
+        <a href="#kontak" class="btn-outline"><i class="fab fa-whatsapp"></i> Hubungi Kami</a>
+      </div>
+    </div>
+  </div>
+  <!-- Scroll Indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/50 animate-bounce">
+    <i class="fas fa-chevron-down text-xl"></i>
+  </div>
+</section>
+
+<!-- ==================== STATISTIK ==================== -->
+<section class="relative bg-navy-900 dark:bg-navy-950 py-10 overflow-hidden">
+  <div class="islamic-pattern absolute inset-0 opacity-20"></div>
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+      <div class="stat-card text-center p-4" data-aos="fade-up" data-aos-delay="0">
+        <div class="text-gold-400 text-3xl sm:text-4xl mb-1"><i class="fas fa-users"></i></div>
+        <p class="text-3xl sm:text-4xl font-bold text-white counter" data-target="150">0</p>
+        <p class="text-white/50 text-sm mt-1">Anggota Aktif</p>
+      </div>
+      <div class="stat-card text-center p-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="text-gold-400 text-3xl sm:text-4xl mb-1"><i class="fas fa-clipboard-list"></i></div>
+        <p class="text-3xl sm:text-4xl font-bold text-white counter" data-target="24">0</p>
+        <p class="text-white/50 text-sm mt-1">Program Kerja</p>
+      </div>
+      <div class="stat-card text-center p-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="text-gold-400 text-3xl sm:text-4xl mb-1"><i class="fas fa-book-quran"></i></div>
+        <p class="text-3xl sm:text-4xl font-bold text-white counter" data-target="52">0</p>
+        <p class="text-white/50 text-sm mt-1">Kajian Rutin/Tahun</p>
+      </div>
+      <div class="stat-card text-center p-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="text-gold-400 text-3xl sm:text-4xl mb-1"><i class="fas fa-graduation-cap"></i></div>
+        <p class="text-3xl sm:text-4xl font-bold text-white counter" data-target="500">0</p>
+        <p class="text-white/50 text-sm mt-1">Alumni</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== TENTANG KAMI ==================== -->
+<section id="tentang" class="bg-section-light py-20 sm:py-28 islamic-pattern">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header -->
+    <div class="text-center mb-16" data-aos="fade-up">
+      <p class="text-emerald-600 dark:text-emerald-400 font-semibold text-sm tracking-widest uppercase mb-3">Mengenal Kami</p>
+      <h2 class="section-title text-4xl sm:text-5xl font-bold text-navy-900 dark:text-white">Tentang <span class="text-gradient">Al-Kahfi</span></h2>
+      <div class="w-20 h-1 bg-gradient-to-r from-emerald-500 to-gold-500 mx-auto mt-4 rounded-full"></div>
+    </div>
+    <!-- Sejarah -->
+    <div class="grid lg:grid-cols-2 gap-12 items-center mb-20">
+      <div data-aos="fade-right">
+        <h3 class="section-title text-2xl font-bold text-navy-900 dark:text-white mb-4">Sejarah Berdiri</h3>
+        <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+          Majelis Taklim Al-Kahfi didirikan pada tahun 2015 oleh sekelompok mahasiswa FKIP Universitas Mataram yang memiliki visi besar untuk membangun ekosistem dakwah kampus yang berkualitas. Nama "Al-Kahfi" diambil dari Surah Al-Kahfi yang melambangkan perlindungan, keimanan, dan ilmu yang mendalam.
+        </p>
+        <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+          Berawal dari kajian rutin mingguan dengan tidak lebih dari 20 orang, Al-Kahfi terus berkembang hingga menjadi salah satu organisasi dakwah kampus paling aktif dan berpengaruh di lingkungan FKIP Universitas Mataram.
+        </p>
+        <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+          Hingga kini, Al-Kahfi telah melahirkan ratusan alumni yang tersebar di berbagai bidang — pendidik, da'i, pemimpin komunitas, dan profesional yang tetap menjaga nilai-nilai keislaman dalam kesehariannya.
+        </p>
+      </div>
+      <div data-aos="fade-left">
+        <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+          <img src="https://picsum.photos/seed/campus-mosque-study/800/600" alt="Kegiatan Al-Kahfi" class="w-full h-80 object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-navy-900/60 to-transparent"></div>
+          <div class="absolute bottom-6 left-6 text-white">
+            <p class="font-display text-3xl font-bold">Sejak 2015</p>
+            <p class="text-white/70 text-sm">Berkarya untuk Umat</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Visi Misi -->
+    <div class="grid md:grid-cols-2 gap-8 mb-20">
+      <div class="glass-card p-8" data-aos="fade-up" data-aos-delay="0">
+        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-500 to-emerald-700 flex items-center justify-center mb-5 shadow-lg">
+          <i class="fas fa-eye text-white text-xl"></i>
+        </div>
+        <h3 class="section-title text-2xl font-bold text-navy-900 dark:text-white mb-4">Visi</h3>
+        <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-lg">
+          Menjadi wadah dakwah kampus yang unggul dalam membentuk generasi muslim rabbani, intelektual, berakhlakul karimah, dan berkontribusi nyata bagi masyarakat dan peradaban Islam.
+        </p>
+      </div>
+      <div class="glass-card p-8" data-aos="fade-up" data-aos-delay="100">
+        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-gold-500 to-gold-700 flex items-center justify-center mb-5 shadow-lg">
+          <i class="fas fa-bullseye text-white text-xl"></i>
+        </div>
+        <h3 class="section-title text-2xl font-bold text-navy-900 dark:text-white mb-4">Misi</h3>
+        <ul class="text-gray-600 dark:text-gray-300 space-y-2.5">
+          <li class="flex items-start gap-2"><i class="fas fa-check-circle text-emerald-500 mt-1 text-sm flex-shrink-0"></i> Menyelenggarakan kajian keislaman yang berkualitas dan aplikatif</li>
+          <li class="flex items-start gap-2"><i class="fas fa-check-circle text-emerald-500 mt-1 text-sm flex-shrink-0"></i> Membangun ukhuwah islamiyah yang kuat di kalangan anggota</li>
+          <li class="flex items-start gap-2"><i class="fas fa-check-circle text-emerald-500 mt-1 text-sm flex-shrink-0"></i> Mengembangkan potensi kepemimpinan dan kaderisasi dakwah</li>
+          <li class="flex items-start gap-2"><i class="fas fa-check-circle text-emerald-500 mt-1 text-sm flex-shrink-0"></i> Melaksanakan program pengabdian masyarakat yang berkelanjutan</li>
+          <li class="flex items-start gap-2"><i class="fas fa-check-circle text-emerald-500 mt-1 text-sm flex-shrink-0"></i> Memanfaatkan media digital untuk dakwah yang luas dan kreatif</li>
+        </ul>
+      </div>
+    </div>
+    <!-- Nilai-Nilai -->
+    <div class="mb-20">
+      <h3 class="section-title text-3xl font-bold text-navy-900 dark:text-white text-center mb-10" data-aos="fade-up">Nilai-Nilai Organisasi</h3>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-5" data-aos="fade-up" data-aos-delay="100">
+        <div class="glass-card p-6 text-center group">
+          <div class="w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center mx-auto mb-3 group-hover:bg-emerald-500 transition">
+            <i class="fas fa-hand-holding-heart text-emerald-600 dark:text-emerald-400 group-hover:text-white transition"></i>
+          </div>
+          <h4 class="font-bold text-navy-900 dark:text-white text-sm">Ukhuwah Islamiyah</h4>
+        </div>
+        <div class="glass-card p-6 text-center group">
+          <div class="w-12 h-12 rounded-xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mx-auto mb-3 group-hover:bg-blue-500 transition">
+            <i class="fas fa-book-open text-blue-600 dark:text-blue-400 group-hover:text-white transition"></i>
+          </div>
+          <h4 class="font-bold text-navy-900 dark:text-white text-sm">Keilmuan</h4>
+        </div>
+        <div class="glass-card p-6 text-center group">
+          <div class="w-12 h-12 rounded-xl bg-gold-100 dark:bg-gold-900/30 flex items-center justify-center mx-auto mb-3 group-hover:bg-gold-500 transition">
+            <i class="fas fa-crown text-gold-600 dark:text-gold-400 group-hover:text-white transition"></i>
+          </div>
+          <h4 class="font-bold text-navy-900 dark:text-white text-sm">Kepemimpinan</h4>
+        </div>
+        <div class="glass-card p-6 text-center group">
+          <div class="w-12 h-12 rounded-xl bg-teal-100 dark:bg-teal-900/30 flex items-center justify-center mx-auto mb-3 group-hover:bg-teal-500 transition">
+            <i class="fas fa-mosque text-teal-600 dark:text-teal-400 group-hover:text-white transition"></i>
+          </div>
+          <h4 class="font-bold text-navy-900 dark:text-white text-sm">Dakwah</h4>
+        </div>
+        <div class="glass-card p-6 text-center group">
+          <div class="w-12 h-12 rounded-xl bg-rose-100 dark:bg-rose-900/30 flex items-center justify-center mx-auto mb-3 group-hover:bg-rose-500 transition">
+            <i class="fas fa-hands-helping text-rose-600 dark:text-rose-400 group-hover:text-white transition"></i>
+          </div>
+          <h4 class="font-bold text-navy-900 dark:text-white text-sm">Pengabdian</h4>
+        </div>
+      </div>
+    </div>
+    <!-- Struktur Organisasi -->
+    <div data-aos="fade-up">
+      <h3 class="section-title text-3xl font-bold text-navy-900 dark:text-white text-center mb-10">Struktur Kepengurusan 2024/2025</h3>
+      <div class="flex flex-col items-center">
+        <!-- Pembina -->
+        <div class="glass-card p-5 text-center mb-4 min-w-[200px]">
+          <img src="https://picsum.photos/seed/pembina-ustadz/80/80" alt="Pembina" class="w-16 h-16 rounded-full mx-auto mb-2 object-cover border-2 border-gold-400">
+          <p class="text-xs text-emerald-600 dark:text-emerald-400 font-semibold uppercase tracking-wider">Pembina</p>
+          <p class="font-bold text-navy-900 dark:text-white text-sm">Ust. Ahmad Fauzi, M.Pd</p>
+        </div>
+        <div class="w-px h-6 bg-emerald-300 dark:bg-emerald-700"></div>
+        <!-- Ketua & Wakil -->
+        <div class="flex flex-wrap justify-center gap-4 mb-4">
+          <div class="glass-card p-5 text-center min-w-[180px]">
+            <img src="https://picsum.photos/seed/ketua-mahasiswa/80/80" alt="Ketua" class="w-16 h-16 rounded-full mx-auto mb-2 object-cover border-2 border-emerald-500">
+            <p class="text-xs text-emerald-600 dark:text-emerald-400 font-semibold uppercase tracking-wider">Ketua Umum</p>
+            <p class="font-bold text-navy-900 dark:text-white text-sm">M. Ilham Ramadhan</p>
+          </div>
+          <div class="glass-card p-5 text-center min-w-[180px]">
+            <img src="https://picsum.photos/seed/wakil-ketua-f/80/80" alt="Wakil" class="w-16 h-16 rounded-full mx-auto mb-2 object-cover border-2 border-emerald-500">
+            <p class="text-xs text-emerald-600 dark:text-emerald-400 font-semibold uppercase tracking-wider">Wakil Ketua</p>
+            <p class="font-bold text-navy-900 dark:text-white text-sm">Siti Nurhaliza</p>
+          </div>
+        </div>
+        <div class="w-px h-6 bg-emerald-300 dark:bg-emerald-700"></div>
+        <!-- Sekben -->
+        <div class="flex flex-wrap justify-center gap-4 mb-4">
+          <div class="glass-card p-4 text-center min-w-[160px]">
+            <img src="https://picsum.photos/seed/sekretaris-org/80/80" alt="Sekretaris" class="w-14 h-14 rounded-full mx-auto mb-2 object-cover border-2 border-navy-400">
+            <p class="text-xs text-navy-600 dark:text-navy-300 font-semibold">Sekretaris</p>
+            <p class="font-bold text-navy-900 dark:text-white text-sm">Aisyah Rahmawati</p>
+          </div>
+          <div class="glass-card p-4 text-center min-w-[160px]">
+            <img src="https://picsum.photos/seed/bendahara-org/80/80" alt="Bendahara" class="w-14 h-14 rounded-full mx-auto mb-2 object-cover border-2 border-navy-400">
+            <p class="text-xs text-navy-600 dark:text-navy-300 font-semibold">Bendahara</p>
+            <p class="font-bold text-navy-900 dark:text-white text-sm">Rizki Amelia</p>
+          </div>
+        </div>
+        <div class="w-px h-6 bg-emerald-300 dark:bg-emerald-700"></div>
+        <!-- Divisi -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 mt-2" id="orgDivisi"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== DIVISI ORGANISASI ==================== -->
+<section id="divisi" class="bg-section-alt py-20 sm:py-28">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16" data-aos="fade-up">
+      <p class="text-emerald-600 dark:text-emerald-400 font-semibold text-sm tracking-widest uppercase mb-3">Struktur Kerja</p>
+      <h2 class="section-title text-4xl sm:text-5xl font-bold text-navy-900 dark:text-white">Divisi <span class="text-gradient">Organisasi</span></h2>
+      <div class="w-20 h-1 bg-gradient-to-r from-emerald-500 to-gold-500 mx-auto mt-4 rounded-full"></div>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8" id="divisiGrid"></div>
+  </div>
+</section>
+
+<!-- ==================== PROGRAM KERJA (TIMELINE) ==================== -->
+<section id="program" class="bg-section-light py-20 sm:py-28 islamic-pattern">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16" data-aos="fade-up">
+      <p class="text-emerald-600 dark:text-emerald-400 font-semibold text-sm tracking-widest uppercase mb-3">Agenda Tahunan</p>
+      <h2 class="section-title text-4xl sm:text-5xl font-bold text-navy-900 dark:text-white">Program <span class="text-gradient">Kerja</span></h2>
+      <div class="w-20 h-1 bg-gradient-to-r from-emerald-500 to-gold-500 mx-auto mt-4 rounded-full"></div>
+    </div>
+    <div class="relative" id="timeline"></div>
+  </div>
+</section>
+
+<!-- ==================== GALERI KEGIATAN ==================== -->
+<section id="galeri" class="bg-navy-900 py-20 sm:py-28">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12" data-aos="fade-up">
+      <p class="text-emerald-400 font-semibold text-sm tracking-widest uppercase mb-3">Dokumentasi</p>
+      <h2 class="section-title text-4xl sm:text-5xl font-bold text-white">Galeri <span class="text-gold-400">Kegiatan</span></h2>
+      <div class="w-20 h-1 bg-gradient-to-r from-emerald-500 to-gold-500 mx-auto mt-4 rounded-full"></div>
+    </div>
+    <!-- Filter -->
+    <div class="flex flex-wrap justify-center gap-3 mb-10" data-aos="fade-up" data-aos-delay="100" id="galleryFilters"></div>
+    <!-- Grid -->
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" id="galleryGrid"></div>
+  </div>
+</section>
+
+<!-- ==================== ARTIKEL & DAKWAH ==================== -->
+<section id="artikel" class="bg-section-light py-20 sm:py-28 islamic-pattern">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12" data-aos="fade-up">
+      <p class="text-emerald-600 dark:text-emerald-400 font-semibold text-sm tracking-widest uppercase mb-3">Literasi Islami</p>
+      <h2 class="section-title text-4xl sm:text-5xl font-bold text-navy-900 dark:text-white">Artikel & <span class="text-gradient">Dakwah</span></h2>
+      <div class="w-20 h-1 bg-gradient-to-r from-emerald-500 to-gold-500 mx-auto mt-4 rounded-full"></div>
+    </div>
+    <!-- Search -->
+    <div class="max-w-md mx-auto mb-10" data-aos="fade-up" data-aos-delay="100">
+      <div class="relative">
+        <i class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+        <input type="text" id="articleSearch" placeholder="Cari artikel..." class="form-input pl-11 pr-4" aria-label="Cari artikel">
+      </div>
+    </div>
+    <!-- Articles Grid -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8" id="articleGrid"></div>
+  </div>
+</section>
+
+<!-- ==================== KALENDER KEGIATAN ==================== -->
+<section id="kalender" class="bg-section-alt py-20 sm:py-28">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16" data-aos="fade-up">
+      <p class="text-emerald-600 dark:text-emerald-400 font-semibold text-sm tracking-widest uppercase mb-3">Agenda Mendatang</p>
+      <h2 class="section-title text-4xl sm:text-5xl font-bold text-navy-900 dark:text-white">Kalender <span class="text-gradient">Kegiatan</span></h2>
+      <div class="w-20 h-1 bg-gradient-to-r from-emerald-500 to-gold-500 mx-auto mt-4 rounded-full"></div>
+    </div>
+    <div class="space-y-5" id="calendarList"></div>
+  </div>
+</section>
+
+<!-- ==================== PENDAFTARAN ANGGOTA ==================== -->
+<section id="pendaftaran" class="relative py-20 sm:py-28 overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-br from-emerald-800 via-emerald-700 to-navy-900"></div>
+  <div class="islamic-pattern absolute inset-0 opacity-30"></div>
+  <div class="relative z-10 max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12" data-aos="fade-up">
+      <p class="text-emerald-300 font-semibold text-sm tracking-widest uppercase mb-3">Bergabunglah Bersama Kami</p>
+      <h2 class="section-title text-4xl sm:text-5xl font-bold text-white">Pendaftaran <span class="text-gold-400">Anggota Baru</span></h2>
+      <div class="w-20 h-1 bg-gradient-to-r from-gold-400 to-emerald-300 mx-auto mt-4 rounded-full"></div>
+    </div>
+    <form id="registrationForm" class="glass-card p-8 sm:p-10 space-y-5" data-aos="fade-up" data-aos-delay="100" novalidate>
+      <div>
+        <label class="block text-sm font-semibold text-navy-900 dark:text-white mb-1.5">Nama Lengkap <span class="text-red-500">*</span></label>
+        <input type="text" name="nama" class="form-input" placeholder="Masukkan nama lengkap" required>
+        <p class="text-red-500 text-xs mt-1 hidden err-msg">Nama lengkap wajib diisi</p>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-5">
+        <div>
+          <label class="block text-sm font-semibold text-navy-900 dark:text-white mb-1.5">NIM <span class="text-red-500">*</span></label>
+          <input type="text" name="nim" class="form-input" placeholder="Contoh: 2201010001" required>
+          <p class="text-red-500 text-xs mt-1 hidden err-msg">NIM wajib diisi</p>
+        </div>
+        <div>
+          <label class="block text-sm font-semibold text-navy-900 dark:text-white mb-1.5">Angkatan <span class="text-red-500">*</span></label>
+          <select name="angkatan" class="form-input" required>
+            <option value="">Pilih angkatan</option>
+            <option>2021</option><option>2022</option><option>2023</option><option>2024</option><option>2025</option>
+          </select>
+          <p class="text-red-500 text-xs mt-1 hidden err-msg">Pilih angkatan</p>
+        </div>
+      </div>
+      <div>
+        <label class="block text-sm font-semibold text-navy-900 dark:text-white mb-1.5">Program Studi <span class="text-red-500">*</span></label>
+        <select name="prodi" class="form-input" required>
+          <option value="">Pilih program studi</option>
+          <option>Pendidikan Bahasa Inggris</option>
+          <option>Pendidikan Bahasa Indonesia</option>
+          <option>Pendidikan Matematika</option>
+          <option>Pendidikan IPA</option>
+          <option>Pendidikan IPS</option>
+          <option>Pendidikan PKn</option>
+          <option>Pendidikan Sejarah</option>
+          <option>Pendidikan Ekonomi</option>
+          <option>Pendidikan Guru SD</option>
+          <option>PGPAUD</option>
+          <option>Pendidikan Olahraga</option>
+          <option>Bimbingan Konseling</option>
+          <option>Pendidikan Seni</option>
+          <option>Teknologi Pendidikan</option>
+        </select>
+        <p class="text-red-500 text-xs mt-1 hidden err-msg">Pilih program studi</p>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-5">
+        <div>
+          <label class="block text-sm font-semibold text-navy-900 dark:text-white mb-1.5">Nomor WhatsApp <span class="text-red-500">*</span></label>
+          <input type="tel" name="wa" class="form-input" placeholder="08xxxxxxxxxx" required>
+          <p class="text-red-500 text-xs mt-1 hidden err-msg">Nomor WA wajib diisi</p>
+        </div>
+        <div>
+          <label class="block text-sm font-semibold text-navy-900 dark:text-white mb-1.5">Email <span class="text-red-500">*</span></label>
+          <input type="email" name="email" class="form-input" placeholder="email@example.com" required>
+          <p class="text-red-500 text-xs mt-1 hidden err-msg">Email tidak valid</p>
+        </div>
+      </div>
+      <div>
+        <label class="block text-sm font-semibold text-navy-900 dark:text-white mb-1.5">Motivasi Bergabung <span class="text-red-500">*</span></label>
+        <textarea name="motivasi" class="form-input" rows="4" placeholder="Ceritakan motivasi Anda bergabung dengan MT. Al-Kahfi..." required></textarea>
+        <p class="text-red-500 text-xs mt-1 hidden err-msg">Motivasi wajib diisi (min. 20 karakter)</p>
+      </div>
+      <button type="submit" class="btn-primary w-full justify-center text-base !py-3.5 btn-gold">
+        <i class="fas fa-paper-plane"></i> Kirim Pendaftaran
+      </button>
+      <p class="text-center text-xs text-gray-500 dark:text-gray-400 mt-2">Data Anda akan tersimpan dan dihubungi oleh tim recruitment kami</p>
+    </form>
+  </div>
+</section>
+
+<!-- ==================== KONTAK ==================== -->
+<section id="kontak" class="bg-section-light py-20 sm:py-28 islamic-pattern">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16" data-aos="fade-up">
+      <p class="text-emerald-600 dark:text-emerald-400 font-semibold text-sm tracking-widest uppercase mb-3">Hubungi Kami</p>
+      <h2 class="section-title text-4xl sm:text-5xl font-bold text-navy-900 dark:text-white">Kontak & <span class="text-gradient">Lokasi</span></h2>
+      <div class="w-20 h-1 bg-gradient-to-r from-emerald-500 to-gold-500 mx-auto mt-4 rounded-full"></div>
+    </div>
+    <div class="grid lg:grid-cols-2 gap-12">
+      <!-- Info -->
+      <div data-aos="fade-right">
+        <div class="space-y-6 mb-8">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center flex-shrink-0">
+              <i class="fas fa-map-marker-alt text-emerald-600 dark:text-emerald-400"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-navy-900 dark:text-white mb-1">Sekretariat</h4>
+              <p class="text-gray-600 dark:text-gray-300 text-sm">Gedung FKIP Universitas Mataram, Lantai 2, Ruang Organisasi Mahasiswa. Jl. Majapahit No. 62, Mataram, NTB</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center flex-shrink-0">
+              <i class="fas fa-envelope text-emerald-600 dark:text-emerald-400"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-navy-900 dark:text-white mb-1">Email</h4>
+              <p class="text-gray-600 dark:text-gray-300 text-sm">alkahfi.fkip@unram.ac.id</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center flex-shrink-0">
+              <i class="fab fa-whatsapp text-emerald-600 dark:text-emerald-400 text-lg"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-navy-900 dark:text-white mb-1">WhatsApp Admin</h4>
+              <p class="text-gray-600 dark:text-gray-300 text-sm">+62 812-3456-7890 (Admin Recruitment)</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center flex-shrink-0">
+              <i class="fas fa-clock text-emerald-600 dark:text-emerald-400"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-navy-900 dark:text-white mb-1">Jam Operasional</h4>
+              <p class="text-gray-600 dark:text-gray-300 text-sm">Senin - Sabtu: 08.00 - 17.00 WITA</p>
+            </div>
+          </div>
+        </div>
+        <!-- Social Media -->
+        <div class="flex gap-3">
+          <a href="#" class="w-11 h-11 rounded-xl bg-gradient-to-br from-pink-500 to-purple-600 flex items-center justify-center text-white hover:scale-110 transition shadow-lg" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="w-11 h-11 rounded-xl bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center text-white hover:scale-110 transition shadow-lg" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="w-11 h-11 rounded-xl bg-gradient-to-br from-gray-800 to-black flex items-center justify-center text-white hover:scale-110 transition shadow-lg" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          <a href="#" class="w-11 h-11 rounded-xl bg-gradient-to-br from-red-600 to-red-800 flex items-center justify-center text-white hover:scale-110 transition shadow-lg" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <!-- Contact Form -->
+      <div data-aos="fade-left">
+        <form id="contactForm" class="glass-card p-8 space-y-5" novalidate>
+          <div class="grid sm:grid-cols-2 gap-5">
+            <div>
+              <label class="block text-sm font-semibold text-navy-900 dark:text-white mb-1.5">Nama</label>
+              <input type="text" name="cNama" class="form-input" placeholder="Nama Anda" required>
+              <p class="text-red-500 text-xs mt-1 hidden err-msg">Wajib diisi</p>
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-navy-900 dark:text-white mb-1.5">Email</label>
+              <input type="email" name="cEmail" class="form-input" placeholder="email@anda.com" required>
+              <p class="text-red-500 text-xs mt-1 hidden err-msg">Email tidak valid</p>
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-navy-900 dark:text-white mb-1.5">Subjek</label>
+            <input type="text" name="cSubjek" class="form-input" placeholder="Subjek pesan" required>
+            <p class="text-red-500 text-xs mt-1 hidden err-msg">Wajib diisi</p>
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-navy-900 dark:text-white mb-1.5">Pesan</label>
+            <textarea name="cPesan" class="form-input" rows="5" placeholder="Tulis pesan Anda..." required></textarea>
+            <p class="text-red-500 text-xs mt-1 hidden err-msg">Wajib diisi</p>
+          </div>
+          <button type="submit" class="btn-primary w-full justify-center"><i class="fas fa-paper-plane"></i> Kirim Pesan</button>
+        </form>
+      </div>
+    </div>
+    <!-- Map Placeholder -->
+    <div class="mt-12 rounded-2xl overflow-hidden shadow-xl h-72" data-aos="fade-up">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3968.2!2d116.1167!3d-8.5833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOMKwMzQnNTkuOSJTIDExNsKwMDcnMDAuMCJF!5e0!3m2!1sid!2sid!4v1" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Lokasi FKIP Universitas Mataram"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="bg-navy-950 text-white pt-16 pb-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+      <!-- Logo & Deskripsi -->
+      <div class="lg:col-span-1">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-emerald-600 to-emerald-800 flex items-center justify-center">
+            <svg viewBox="0 0 40 40" class="w-7 h-7" fill="none"><path d="M20 3L24 16L37 20L24 24L20 37L16 24L3 20L16 16Z" fill="#d4a843"/><circle cx="20" cy="20" r="5" fill="white" opacity=".9"/></svg>
+          </div>
+          <div>
+            <p class="font-display text-lg font-bold leading-tight">Al-Kahfi</p>
+            <p class="text-[10px] text-white/50 tracking-widest uppercase">FKIP Unram</p>
+          </div>
+        </div>
+        <p class="text-white/50 text-sm leading-relaxed">Membentuk Generasi Rabbani, Intelektual, dan Berakhlakul Karimah di lingkungan FKIP Universitas Mataram.</p>
+      </div>
+      <!-- Quick Links -->
+      <div>
+        <h4 class="font-bold text-gold-400 mb-4 text-sm uppercase tracking-wider">Tautan Cepat</h4>
+        <ul class="space-y-2.5">
+          <li><a href="#beranda" class="text-white/50 hover:text-emerald-400 text-sm transition">Beranda</a></li>
+          <li><a href="#tentang" class="text-white/50 hover:text-emerald-400 text-sm transition">Tentang Kami</a></li>
+          <li><a href="#divisi" class="text-white/50 hover:text-emerald-400 text-sm transition">Divisi</a></li>
+          <li><a href="#program" class="text-white/50 hover:text-emerald-400 text-sm transition">Program Kerja</a></li>
+          <li><a href="#galeri" class="text-white/50 hover:text-emerald-400 text-sm transition">Galeri</a></li>
+          <li><a href="#artikel" class="text-white/50 hover:text-emerald-400 text-sm transition">Artikel</a></li>
+          <li><a href="#pendaftaran" class="text-white/50 hover:text-emerald-400 text-sm transition">Pendaftaran</a></li>
+        </ul>
+      </div>
+      <!-- Kegiatan -->
+      <div>
+        <h4 class="font-bold text-gold-400 mb-4 text-sm uppercase tracking-wider">Kegiatan</h4>
+        <ul class="space-y-2.5">
+          <li><a href="#program" class="text-white/50 hover:text-emerald-400 text-sm transition">Kajian Pekanan</a></li>
+          <li><a href="#program" class="text-white/50 hover:text-emerald-400 text-sm transition">Tahsin & Tahfidz</a></li>
+          <li><a href="#program" class="text-white/50 hover:text-emerald-400 text-sm transition">Tabligh Akbar</a></li>
+          <li><a href="#program" class="text-white/50 hover:text-emerald-400 text-sm transition">Bakti Sosial</a></li>
+          <li><a href="#program" class="text-white/50 hover:text-emerald-400 text-sm transition">Pelatihan Kepemimpinan</a></li>
+        </ul>
+      </div>
+      <!-- Media Sosial -->
+      <div>
+        <h4 class="font-bold text-gold-400 mb-4 text-sm uppercase tracking-wider">Media Sosial</h4>
+        <div class="flex gap-3 mb-5">
+          <a href="#" class="w-10 h-10 rounded-lg bg-white/5 hover:bg-gradient-to-br hover:from-pink-500 hover:to-purple-600 flex items-center justify-center text-white/60 hover:text-white transition" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="w-10 h-10 rounded-lg bg-white/5 hover:bg-gradient-to-br hover:from-blue-600 hover:to-blue-800 flex items-center justify-center text-white/60 hover:text-white transition" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="w-10 h-10 rounded-lg bg-white/5 hover:bg-gradient-to-br hover:from-gray-700 hover:to-black flex items-center justify-center text-white/60 hover:text-white transition" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          <a href="#" class="w-10 h-10 rounded-lg bg-white/5 hover:bg-gradient-to-br hover:from-red-600 hover:to-red-800 flex items-center justify-center text-white/60 hover:text-white transition" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p class="text-white/40 text-xs">Ikuti media sosial kami untuk informasi terbaru mengenai kegiatan dan kajian.</p>
+      </div>
+    </div>
+    <!-- Bottom -->
+    <div class="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-white/40 text-sm text-center sm:text-left">&copy; 2025 MT. Al-Kahfi FKIP Universitas Mataram. Seluruh hak cipta dilindungi.</p>
+      <p class="text-white/30 text-xs">Dibuat dengan <i class="fas fa-heart text-emerald-500"></i> untuk umat</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ==================== SCROLL TO TOP ==================== -->
+<button id="scrollTop" class="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-600 to-emerald-800 text-white shadow-xl flex items-center justify-center hover:scale-110 transition" aria-label="Kembali ke atas">
+  <i class="fas fa-chevron-up"></i>
+</button>
+
+<!-- ==================== AOS & SCRIPTS ==================== -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+// ========== DATA ==========
+const divisiData = [
+  { icon:'fa-user-graduate', color:'emerald', nama:'Divisi Kaderisasi', desc:'Membentuk kader-kader dakwah yang tangguh, militan, dan berkualitas melalui serangkaian pelatihan intensif.', program:['Basic Training Dakwah','Advanced Leadership Camp','Mentoring Berjenjang','Evaluasi Kader Triwulan'], ketua:'Fajar Nugroho' },
+  { icon:'fa-mosque', color:'teal', nama:'Divisi Syiar dan Dakwah', desc:'Menyelenggarakan kegiatan dakwah yang kreatif, efektif, dan menyentuh seluruh lapisan mahasiswa FKIP.', program:['Tabligh Akbar','Dakwah Kampus','Jumat Berkah','Kajian Spesial'], ketua:'Hikmah Wulandari' },
+  { icon:'fa-laptop-code', color:'blue', nama:'Divisi Media dan Informasi', desc:'Mengelola branding digital, konten kreatif, dan publikasi organisasi melalui berbagai platform media.', program:['Pengelolaan Sosmed','Desain Grafis','Videografi','Newsletter Bulanan'], ketua:'Dimas Pratama' },
+  { icon:'fa-handshake', color:'amber', nama:'Divisi Humas', desc:'Membangun relasi dan kerjasama strategis dengan internal dan eksternal organisasi.', program:['Silaturahmi Organisasi','Kerjasama Lembaga','Fundraising','Public Relations'], ketua:'Nadia Safitri' },
+  { icon:'fa-book-quran', color:'indigo', nama:'Divisi Kajian Keislaman', desc:'Merancang dan mengelola program kajian rutin maupun khusus yang berkualitas dan aplikatif.', program:['Kajian Pekanan','Tahsin & Tahfidz','Kajian Kitab','Study Club Islami'], ketua:'Ahmad Rizki' },
+  { icon:'fa-hands-helping', color:'rose', nama:'Divisi Sosial dan Pengabdian', desc:'Melaksanakan program pengabdian masyarakat yang berdampak nyata bagi masyarakat sekitar kampus.', program:['Bakti Sosial','Santunan Anak Yatim','Peduli Lingkungan','Klinik Gratis'], ketua:'Laila Fitria' }
+];
+
+const timelineData = [
+  { bulan:'Januari', judul:'Open Recruitment Anggota Baru', desc:'Pendaftaran dan seleksi anggota baru MT. Al-Kahfi periode berjalan.', icon:'fa-door-open' },
+  { bulan:'Februari', judul:'Pelatihan Kepemimpinan Dasar', desc:'Basic Training untuk membentuk karakter kepemimpinan kader baru.', icon:'fa-chess-king' },
+  { bulan:'Maret', judul:'Kajian Pekanan Dimulai', desc:'Rangkaian kajian rutin mingguan dengan berbagai tema keislaman.', icon:'fa-book-quran' },
+  { bulan:'April', judul:'Tahsin dan Tahfidz Al-Quran', desc:'Program pembinaan membaca dan menghafal Al-Quran secara berkala.', icon:'fa-feather' },
+  { bulan:'Mei', judul:'Tabligh Akbar', desc:'Kegiatan dakwah besar bersama pemateri nasional terkemuka.', icon:'fa-microphone-alt' },
+  { bulan:'Juni', judul:'Mentoring Mahasiswa', desc:'Program pendampingan akademik dan spiritual bagi anggota.', icon:'fa-users' },
+  { bulan:'Juli', judul:'Ramadhan Berkah', desc:'Serangkaian kegiatan Ramadhan: buka bersama, tadarus, pesantren kilat.', icon:'fa-moon' },
+  { bulan:'Agustus', judul:'Bakti Sosial', desc:'Kegiatan sosial berupa santunan dan bantuan kepada masyarakat kurang mampu.', icon:'fa-hand-holding-heart' }
+];
+
+const galleryData = [
+  { src:'https://picsum.photos/seed/kajian-rutin-1/600/400', title:'Kajian Rutin Mingguan', cat:'Kajian' },
+  { src:'https://picsum.photos/seed/tabligh-akbar-2/600/400', title:'Tabligh Akbar 2024', cat:'Tabligh Akbar' },
+  { src:'https://picsum.photos/seed/pelatihan-dakwah/600/400', title:'Pelatihan Kepemimpinan', cat:'Pelatihan' },
+  { src:'https://picsum.photos/seed/baksos-alkahfi/600/400', title:'Bakti Sosial di Desa', cat:'Sosial' },
+  { src:'https://picsum.photos/seed/kajian-kitab-3/600/400', title:'Kajian Kitab Kuning', cat:'Kajian' },
+  { src:'https://picsum.photos/seed/rapat-pengurus/600/400', title:'Rapat Pengurus Harian', cat:'Dokumentasi' },
+  { src:'https://picsum.photos/seed/tahfidz-session/600/400', title:'Sesi Tahfidz Al-Quran', cat:'Kajian' },
+  { src:'https://picsum.photos/seed/tablig-besar-2/600/400', title:'Tabligh Akbar Bersama Ust. Adi', cat:'Tabligh Akbar' },
+  { src:'https://picsum.photos/seed/training-camp/600/400', title:'Leadership Camp', cat:'Pelatihan' },
+  { src:'https://picsum.photos/seed/santunan-yatim/600/400', title:'Santunan Anak Yatim', cat:'Sosial' },
+  { src:'https://picsum.photos/seed/photo-pengurus/600/400', title:'Foto Bersama Pengurus', cat:'Dokumentasi' },
+  { src:'https://picsum.photos/seed/study-club-islamic/600/400', title:'Study Club Islami', cat:'Kajian' }
+];
+
+const artikelData = [
+  { title:'Menjadi Mahasiswa Rabbani di Era Digital', excerpt:'Bagaimana seorang mahasiswa bisa menjaga keseimbangan antara keilmuan dunia dan keimanan di tengah arus digital yang deras...', cat:'Opini', date:'15 Jan 2025', author:'M. Ilham Ramadhan', img:'https://picsum.photos/seed/rabbani-digital/800/500', body:'<p>Di era digital yang penuh dengan distraksi dan informasi yang tak terbatas, menjadi mahasiswa rabbani bukan berarti memutus diri dari perkembangan zaman. Justru, seorang rabbani adalah mereka yang mampu memanfaatkan teknologi sebagai sarana untuk meningkatkan keimanan dan keilmuan.</p><p>Al-Quran mengajarkan kita untuk selalu berfikir dan merenungkan ciptaan Allah. Mahasiswa rabbani menggunakan internet bukan hanya untuk hiburan, tetapi juga untuk menuntut ilmu, berdakwah, dan membangun jaringan ukhuwah.</p><p>Berikut beberapa langkah praktis menjadi mahasiswa rabbani di era digital: pertama, tentukan prioritas waktu ibadah yang tidak bisa diganggu gugat; kedua, kurangi konsumsi konten yang tidak bermanfaat; ketiga, aktif dalam komunitas dakwah kampus seperti MT. Al-Kahfi.</p>' },
+  { title:'Pentingnya Mentoring dalam Membangun Ukhuwah', excerpt:'Mentoring bukan sekadar transfer ilmu, tapi membangun ikatan batin yang kuat antara sesama muslim di kampus...', cat:'Dakwah', date:'22 Jan 2025', author:'Siti Nurhaliza', img:'https://picsum.photos/seed/mentoring-ukhuwah/800/500', body:'<p>Mentoring adalah salah satu program unggulan MT. Al-Kahfi yang memiliki dampak mendalam bagi pembentukan karakter anggota. Berbeda dengan kajian yang bersifat massal, mentoring memberikan ruang personal untuk berdiskusi, berbagi, dan saling menguatkan.</p><p>Dalam mentoring, seorang mentor tidak hanya menyampaikan materi, tetapi juga menjadi teman curhat, motivator, dan teladan. Hubungan yang terbangun melalui mentoring seringkali bertahan lama bahkan setelah masa kuliah berakhir.</p><p>Ukhuwah yang dibangun di atas dasar iman akan menghasilkan sinergi yang luar biasa. Rasulullah SAW bersabda bahwa kaum mukmin dalam saling mencintai dan saling merahmati bagaikan satu tubuh.</p>' },
+  { title:'Tahfidz Al-Quran: Investasi Akhirat yang Tak Pernah Rugi', excerpt:'Menghafal Al-Quran di tengah kesibukan kuliah memang menantang, namun pahala yang didapat tak ternilai harganya...', cat:'Motivasi', date:'5 Feb 2025', author:'Ahmad Rizki', img:'https://picsum.photos/seed/tahfidz-investasi/800/500', body:'<p>Di antara amalan yang paling mulia adalah menghafal Al-Quran. Rasulullah SAW bersabda: "Dibacakan kepada pemilik Al-Quran, maka bacalah dan naiklah, dan bacalah dengan tartil sebagaimana engkau membacanya di dunia." (HR. Tirmidzi)</p><p>Bagi mahasiswa, waktu yang paling tepat untuk tahfidz adalah di pagi hari setelah Subuh atau di antara jadwal kuliah. Konsistensi 30 menit per hari lebih baik daripada 3 jam sekali seminggu.</p><p>MT. Al-Kahfi menyediakan program tahfidz dengan pendampingan khusus agar setiap anggota yang memiliki niat menghafal Al-Quran bisa mendapatkan bimbingan yang terstruktur.</p>' },
+  { title:'Dakwah Kampus: Antara Idealisme dan Realitas', excerpt:'Dakwah di kampus memiliki tantangan tersendiri. Bagaimana menyiasati antara idealisme dakwah dan realitas mahasiswa...', cat:'Opini', date:'12 Feb 2025', author:'Fajar Nugroho', img:'https://picsum.photos/seed/dakwah-kampus-reality/800/500', body:'<p>Dakwah kampus seringkali dihadapkan pada dilema: antara mempertahankan idealisme dakwah yang tinggi atau menyesuaikan dengan realitas mahasiswa yang sibuk dengan tugas dan kegiatan akademik.</p><p>Kunci dari dakwah kampus yang efektif adalah fleksibilitas tanpa mengorbankan prinsip. Kita bisa menyampaikan dakwah melalui berbagai cara: melalui kajian yang ringan dan aplikatif, melalui media sosial dengan konten yang menarik, atau melalui keteladanan dalam keseharian.</p><p>MT. Al-Kahfi berusaha menjembatani gap ini dengan menyediakan berbagai format dakwah yang bisa diakses oleh seluruh mahasiswa FKIP, tanpa membebani mereka.</p>' },
+  { title:'Membangun Kepemimpinan Islami di Lingkungan Akademik', excerpt:'Kepemimpinan dalam Islam bukan soal kekuasaan, tapi soal pengabdian. Bagaimana menerapkannya di organisasi kampus...', cat:'Keilmuan', date:'20 Feb 2025', author:'Dimas Pratama', img:'https://picsum.photos/seed/leadership-islamic/800/500', body:'<p>Rasulullah SAW adalah teladan utama kepemimpinan Islami. Beliau memimpin dengan kasih sayang, keadilan, dan penuh kepedulian terhadap yang dipimpinnya.</p><p>Di lingkungan akademik, kepemimpinan Islami bisa diterapkan melalui: pertama, amanah dalam menjalankan setiap tanggung jawab; kedua, syura (musyawarah) dalam pengambilan keputusan; ketiga, adil dalam memperlakukan setiap anggota; dan keempat, ikhlas tanpa mengharapkan pamrih.</p><p>Program pelatihan kepemimpinan di MT. Al-Kahfi dirancang untuk membentuk pemimpin-pemimpin muda yang memiliki visi dakwah dan kapasitas manajerial yang mumpuni.</p>' },
+  { title:'Dakwah Digital: Peluang dan Tantangan Generasi Milenial', excerpt:'Media sosial menjadi medan dakwah baru. Namun, ada aturan dan etika yang perlu dipahami dalam berdakwah digital...', cat:'Dakwah Digital', date:'1 Mar 2025', author:'Hikmah Wulandari', img:'https://picsum.photos/seed/dakwah-digital-era/800/500', body:'<p>Dakwah digital adalah penggunaan platform digital untuk menyebarkan nilai-nilai keislaman. Di era media sosial, dakwah tidak lagi terbatas pada mimbar masjid, tetapi bisa menjangkau jutaan orang melalui satu konten yang viral.</p><p>Namun, dakwah digital juga memiliki tantangan: hoaks, ujaran kebencian, dan polarisasi yang marak di media sosial. Seorang da\'i digital harus memastikan keakuratan informasi, menggunakan bahasa yang menyejukkan, dan menghindari sensasionalisme.</p><p>Divisi Media dan Informasi MT. Al-Kahfi secara konsisten mengedukasi anggotanya tentang etika dakwah digital sekaligus memproduksi konten-konten berkualitas yang menginspirasi.</p>' }
+];
+
+const calendarData = [
+  { tanggal:'25 Jul 2025', waktu:'08.00 - 12.00 WITA', judul:'Kajian Akbar: "Pemuda dan Al-Quran"', lokasi:'Aula FKIP Unram', jenis:'Kajian', warna:'emerald' },
+  { tanggal:'2 Aug 2025', waktu:'07.00 - selesai WITA', judul:'Bakti Sosial di Desa Bentek', lokasi:'Desa Bentek, Lombok Utara', jenis:'Sosial', warna:'rose' },
+  { tanggal:'10 Aug 2025', waktu:'09.00 - 15.00 WITA', judul:'Workshop Desain Grafis untuk Dakwah', lokasi:'Lab Komputer FKIP', jenis:'Pelatihan', warna:'blue' },
+  { tanggal:'17 Aug 2025', waktu:'08.00 - 11.00 WITA', judul:'Kajian Pekanan: Akhlak Terpuji', lokasi:'Mushola FKIP Unram', jenis:'Kajian', warna:'emerald' },
+  { tanggal:'24 Aug 2025', waktu:'13.00 - 16.00 WITA', judul:'Rapat Koordinasi Semester Ganjil', lokasi:'Ruang Organisasi FKIP', jenis:'Internal', warna:'amber' },
+  { tanggal:'5 Sep 2025', waktu:'08.00 - 17.00 WITA', judul:'Leadership Camp 2025', lokasi:'Wisata Alam Senggigi', jenis:'Pelatihan', warna:'blue' }
+];
+
+// ========== INISIALISASI ==========
+document.addEventListener('DOMContentLoaded', function() {
+  // Loading screen
+  setTimeout(() => { document.getElementById('loader').classList.add('hidden'); }, 1800);
+
+  // AOS
+  AOS.init({ duration: 800, once: true, offset: 80 });
+
+  // Render komponen
+  renderDivisi();
+  renderTimeline();
+  renderGallery();
+  renderArticles();
+  renderCalendar();
+  renderOrgDivisi();
+
+  // Event listeners
+  setupNavbar();
+  setupDarkMode();
+  setupMobileMenu();
+  setupCounters();
+  setupForms();
+  setupScrollTop();
+  setupArticleSearch();
+});
+
+// ========== NAVBAR ==========
+function setupNavbar() {
+  const nav = document.getElementById('navbar');
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  window.addEventListener('scroll', () => {
+    // Background
+    if (window.scrollY > 80) { nav.classList.add('scrolled'); }
+    else { nav.classList.remove('scrolled'); }
+
+    // Scroll spy
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 200) current = s.getAttribute('id');
+    });
+    navLinks.forEach(l => {
+      l.classList.remove('active');
+      if (l.getAttribute('href') === '#' + current) l.classList.add('active');
+    });
+  });
+}
+
+// ========== DARK MODE ==========
+function setupDarkMode() {
+  const btn = document.getElementById('darkToggle');
+  const icon = document.getElementById('darkIcon');
+  const saved = localStorage.getItem('darkMode');
+  if (saved === 'true' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.documentElement.classList.add('dark');
+    icon.className = 'fas fa-sun text-sm';
+  }
+  btn.addEventListener('click', () => {
+    document.documentElement.classList.toggle('dark');
+    const isDark = document.documentElement.classList.contains('dark');
+    localStorage.setItem('darkMode', isDark);
+    icon.className = isDark ? 'fas fa-sun text-sm' : 'fas fa-moon text-sm';
+  });
+}
+
+// ========== MOBILE MENU ==========
+function setupMobileMenu() {
+  const btn = document.getElementById('mobileMenuBtn');
+  const menu = document.getElementById('mobileMenu');
+  btn.addEventListener('click', () => { menu.classList.toggle('hidden'); });
+  document.querySelectorAll('.mobile-link').forEach(l => {
+    l.addEventListener('click', () => { menu.classList.add('hidden'); });
+  });
+}
+
+// ========== COUNTER ANIMATION ==========
+function setupCounters() {
+  const counters = document.querySelectorAll('.counter');
+  let counted = false;
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !counted) {
+        counted = true;
+        counters.forEach(c => {
+          const target = +c.dataset.target;
+          const duration = 2000;
+          const step = target / (duration / 16);
+          let val = 0;
+          const timer = setInterval(() => {
+            val += step;
+            if (val >= target) { val = target; clearInterval(timer); }
+            c.textContent = Math.floor(val) + '+';
+          }, 16);
+        });
+      }
+    });
+  }, { threshold: 0.5 });
+  counters.forEach(c => observer.observe(c));
+}
+
+// ========== RENDER DIVISI ==========
+function renderDivisi() {
+  const grid = document.getElementById('divisiGrid');
+  const colorMap = { emerald:'emerald', teal:'teal', blue:'blue', amber:'amber', indigo:'indigo', rose:'rose' };
+  grid.innerHTML = divisiData.map((d, i) => `
+    <div class="glass-card p-7" data-aos="fade-up" data-aos-delay="${i * 80}">
+      <div class="w-14 h-14 rounded-2xl bg-${d.color}-100 dark:bg-${d.color}-900/30 flex items-center justify-center mb-5">
+        <i class="fas ${d.icon} text-${d.color}-600 dark:text-${d.color}-400 text-xl"></i>
+      </div>
+      <h3 class="font-bold text-navy-900 dark:text-white text-lg mb-2">${d.nama}</h3>
+      <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">${d.desc}</p>
+      <div class="mb-4">
+        <p class="text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">Program Kerja</p>
+        <ul class="space-y-1.5">
+          ${d.program.map(p => `<li class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300"><i class="fas fa-check text-${d.color}-500 text-xs"></i>${p}</li>`).join('')}
+        </ul>
+      </div>
+      <div class="pt-3 border-t border-gray-100 dark:border-navy-700">
+        <p class="text-xs text-gray-500 dark:text-gray-400">Ketua Divisi</p>
+        <p class="font-semibold text-navy-900 dark:text-white text-sm">${d.ketua}</p>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ========== RENDER ORG DIVISI ==========
+function renderOrgDivisi() {
+  const el = document.getElementById('orgDivisi');
+  el.innerHTML = divisiData.map(d => `
+    <div class="glass-card p-3 text-center">
+      <div class="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-500 to-navy-700 flex items-center justify-center mx-auto mb-1.5">
+        <i class="fas ${d.icon} text-white text-xs"></i>
+      </div>
+      <p class="text-[10px] text-gray-500 dark:text-gray-400 font-semibold uppercase">${d.nama.replace('Divisi ','')}</p>
+      <p class="font-bold text-navy-900 dark:text-white text-xs mt-0.5">${d.ketua.split(' ')[0]}</p>
+    </div>
+  `).join('');
+}
+
+// ========== RENDER TIMELINE ==========
+function renderTimeline() {
+  const el = document.getElementById('timeline');
+  el.innerHTML = '<div class="timeline-line hidden md:block"></div>' +
+    timelineData.map((t, i) => {
+      const isLeft = i % 2 === 0;
+      return `
+      <div class="relative flex flex-col md:flex-row items-center mb-12 ${isLeft ? 'md:flex-row' : 'md:flex-row-reverse'}" data-aos="fade-up" data-aos-delay="${i * 80}">
+        <div class="hidden md:block w-1/2 ${isLeft ? 'pr-12 text-right' : 'pl-12 text-left'}">
+          <div class="glass-card p-6 inline-block">
+            <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">${t.bulan}</span>
+            <h4 class="font-bold text-navy-900 dark:text-white mt-1 mb-2">${t.judul}</h4>
+            <p class="text-gray-600 dark:text-gray-300 text-sm">${t.desc}</p>
+          </div>
+        </div>
+        <div class="timeline-dot flex-shrink-0 my-4 md:my-0"></div>
+        <div class="md:w-1/2 ${isLeft ? 'pl-12' : 'pr-12'} hidden md:block"></div>
+        <!-- Mobile -->
+        <div class="md:hidden glass-card p-5 w-full max-w-sm">
+          <div class="flex items-center gap-3 mb-2">
+            <div class="w-10 h-10 rounded-xl bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center flex-shrink-0">
+              <i class="fas ${t.icon} text-emerald-600 dark:text-emerald-400"></i>
+            </div>
+            <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">${t.bulan}</span>
+          </div>
+          <h4 class="font-bold text-navy-900 dark:text-white mb-1">${t.judul}</h4>
+          <p class="text-gray-600 dark:text-gray-300 text-sm">${t.desc}</p>
+        </div>
+      </div>`;
+    }).join('');
+}
+
+// ========== RENDER GALERI ==========
+let activeFilter = 'Semua';
+function renderGallery(filter) {
+  filter = filter || activeFilter;
+  activeFilter = filter;
+  const grid = document.getElementById('galleryGrid');
+  const items = filter === 'Semua' ? galleryData : galleryData.filter(g => g.cat === filter);
+  grid.innerHTML = items.map((g, i) => `
+    <div class="gallery-item aspect-[4/3]" data-aos="zoom-in" data-aos-delay="${i * 50}" onclick="openLightbox('${g.src}')">
+      <img src="${g.src}" alt="${g.title}" loading="lazy">
+      <div class="gallery-overlay">
+        <div>
+          <p class="text-white font-bold text-sm">${g.title}</p>
+          <p class="text-gold-400 text-xs">${g.cat}</p>
+        </div>
+      </div>
+    </div>
+  `).join('');
+  // Filter buttons
+  const cats = ['Semua', ...new Set(galleryData.map(g => g.cat))];
+  document.getElementById('galleryFilters').innerHTML = cats.map(c =>
+    `<button class="px-4 py-2 rounded-full text-sm font-medium transition ${c === filter ? 'bg-gold-500 text-navy-900' : 'bg-white/10 text-white/70 hover:bg-white/20'}" onclick="renderGallery('${c}')">${c}</button>`
+  ).join('');
+}
+
+// ========== LIGHTBOX ==========
+function openLightbox(src) {
+  document.getElementById('lightboxImg').src = src;
+  document.getElementById('lightbox').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+// ========== RENDER ARTIKEL ==========
+let articleFilterText = '';
+function renderArticles(search) {
+  search = search || articleFilterText;
+  articleFilterText = search;
+  const grid = document.getElementById('articleGrid');
+  const items = search
+    ? artikelData.filter(a => a.title.toLowerCase().includes(search.toLowerCase()) || a.excerpt.toLowerCase().includes(search.toLowerCase()) || a.cat.toLowerCase().includes(search.toLowerCase()))
+    : artikelData;
+  if (items.length === 0) {
+    grid.innerHTML = '<div class="col-span-full text-center py-12"><i class="fas fa-search text-4xl text-gray-300 dark:text-gray-600 mb-4"></i><p class="text-gray-400">Tidak ada artikel yang ditemukan</p></div>';
+    return;
+  }
+  grid.innerHTML = items.map((a, i) => `
+    <article class="glass-card overflow-hidden group" data-aos="fade-up" data-aos-delay="${i * 80}">
+      <div class="overflow-hidden h-48">
+        <img src="${a.img}" alt="${a.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+      </div>
+      <div class="p-6">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-900/20 px-2.5 py-1 rounded-full">${a.cat}</span>
+          <span class="text-xs text-gray-400">${a.date}</span>
+        </div>
+        <h3 class="font-bold text-navy-900 dark:text-white text-lg mb-2 leading-snug group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition">${a.title}</h3>
+        <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4 line-clamp-3">${a.excerpt}</p>
+        <button onclick="openArticleModal(${artikelData.indexOf(a)})" class="text-emerald-600 dark:text-emerald-400 text-sm font-semibold hover:underline inline-flex items-center gap-1">
+          Baca Selengkapnya <i class="fas fa-arrow-right text-xs"></i>
+        </button>
+      </div>
+    </article>
+  `).join('');
+}
+
+function setupArticleSearch() {
+  const input = document.getElementById('articleSearch');
+  let timeout;
+  input.addEventListener('input', () => {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => renderArticles(input.value), 300);
+  });
+}
+
+// ========== ARTICLE MODAL ==========
+function openArticleModal(idx) {
+  const a = artikelData[idx];
+  document.getElementById('modalCategory').textContent = a.cat;
+  document.getElementById('modalTitle').textContent = a.title;
+  document.getElementById('modalDate').textContent = a.date;
+  document.getElementById('modalAuthor').textContent = a.author;
+  document.getElementById('modalBody').innerHTML = a.body;
+  document.getElementById('articleModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeArticleModal() {
+  document.getElementById('articleModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+// ========== RENDER CALENDAR ==========
+function renderCalendar() {
+  const el = document.getElementById('calendarList');
+  const colorMap = { emerald:'emerald', rose:'rose', blue:'blue', amber:'amber' };
+  el.innerHTML = calendarData.map((c, i) => `
+    <div class="glass-card p-5 sm:p-6 flex flex-col sm:flex-row gap-4 sm:gap-6 items-start" data-aos="fade-up" data-aos-delay="${i * 60}">
+      <div class="flex-shrink-0 w-16 h-16 rounded-2xl bg-${c.warna}-100 dark:bg-${c.warna}-900/30 flex flex-col items-center justify-center">
+        <span class="text-${c.warna}-600 dark:text-${c.warna}-400 text-xs font-bold uppercase">${c.tanggal.split(' ')[0]}</span>
+        <span class="text-${c.warna}-700 dark:text-${c.warna}-300 text-xl font-bold leading-none">${c.tanggal.split(' ')[1].replace(',','')}</span>
+        <span class="text-${c.warna}-500 dark:text-${c.warna}-400 text-[10px]">${c.tanggal.split(' ')[2]}</span>
+      </div>
+      <div class="flex-1 min-w-0">
+        <div class="flex items-center gap-2 mb-1 flex-wrap">
+          <span class="text-xs font-bold uppercase tracking-wider text-${c.warna}-600 dark:text-${c.warna}-400 bg-${c.warna}-50 dark:bg-${c.warna}-900/20 px-2.5 py-0.5 rounded-full">${c.jenis}</span>
+          <span class="text-xs text-gray-400"><i class="far fa-clock mr-1"></i>${c.waktu}</span>
+        </div>
+        <h4 class="font-bold text-navy-900 dark:text-white text-lg mb-1">${c.judul}</h4>
+        <p class="text-gray-500 dark:text-gray-400 text-sm"><i class="fas fa-map-marker-alt mr-1"></i>${c.lokasi}</p>
+      </div>
+      <a href="#pendaftaran" class="btn-primary text-xs !py-2 !px-4 flex-shrink-0 self-center"><i class="fas fa-sign-up-alt"></i> Daftar</a>
+    </div>
+  `).join('');
+}
+
+// ========== FORM VALIDATION ==========
+function setupForms() {
+  // Pendaftaran
+  document.getElementById('registrationForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    if (validateForm(this)) {
+      const data = {};
+      new FormData(this).forEach((v, k) => data[k] = v);
+      // Simpan ke localStorage (simulasi database)
+      const stored = JSON.parse(localStorage.getItem('alkahfi_pendaftar') || '[]');
+      stored.push({ ...data, timestamp: new Date().toISOString() });
+      localStorage.setItem('alkahfi_pendaftar', JSON.stringify(stored));
+      this.reset();
+      showToast('Pendaftaran berhasil dikirim! Tim kami akan menghubungi Anda.', 'success');
+    }
+  });
+
+  // Kontak
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    if (validateForm(this)) {
+      this.reset();
+      showToast('Pesan Anda berhasil dikirim! Jazakallahu khairan.', 'success');
+    }
+  });
+}
+
+function validateForm(form) {
+  let valid = true;
+  form.querySelectorAll('.err-msg').forEach(m => m.classList.add('hidden'));
+  form.querySelectorAll('.form-input').forEach(i => i.classList.remove('error'));
+
+  const fields = form.querySelectorAll('[required]');
+  fields.forEach(f => {
+    const errMsg = f.parentElement.querySelector('.err-msg');
+    if (!f.value.trim()) {
+      valid = false;
+      f.classList.add('error');
+      if (errMsg) errMsg.classList.remove('hidden');
+    } else if (f.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.value)) {
+      valid = false;
+      f.classList.add('error');
+      if (errMsg) { errMsg.textContent = 'Format email tidak valid'; errMsg.classList.remove('hidden'); }
+    } else if (f.name === 'motivasi' && f.value.trim().length < 20) {
+      valid = false;
+      f.classList.add('error');
+      if (errMsg) { errMsg.textContent = 'Motivasi minimal 20 karakter'; errMsg.classList.remove('hidden'); }
+    }
+  });
+  if (!valid) showToast('Mohon lengkapi form dengan benar', 'error');
+  return valid;
+}
+
+// ========== TOAST ==========
+function showToast(msg, type) {
+  const toast = document.getElementById('toast');
+  const icon = document.getElementById('toastIcon');
+  const msgEl = document.getElementById('toastMsg');
+  msgEl.textContent = msg;
+  icon.className = type === 'success' ? 'fas fa-check-circle text-emerald-500 text-xl' : 'fas fa-exclamation-circle text-red-500 text-xl';
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 3500);
+}
+
+// ========== SCROLL TO TOP ==========
+function setupScrollTop() {
+  const btn = document.getElementById('scrollTop');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 600) btn.classList.add('visible');
+    else btn.classList.remove('visible');
+  });
+  btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+}
+
+// Keyboard: ESC menutup lightbox/modal
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') { closeLightbox(); closeArticleModal(); }
+});
+</script>
+</body>
+</html>
